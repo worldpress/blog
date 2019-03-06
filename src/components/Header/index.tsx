@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { Container } from 'react-grid-system';
 
 import useSiteMetadata from '../../hooks/useSiteMetadata';
 import useScroll from '../../hooks/useScroll';
@@ -35,28 +36,30 @@ const Header = (props: IHeaderComponentProps) => {
 
   return (
     <header className={headerClassName} ref={headerRef}>
-      <div className="title">
-        <Link className="title-link" to="/">
-          {title}
-        </Link>
-      </div>
-      <nav className="nav">
-        <ul className="menu">
-          {menu.map(({ name, path }) => {
-            const itemClasss = classnames({
-              'menu-item': true,
-              active: path === pathname,
-            });
-            return (
-              <li className={itemClasss} key={path}>
-                <Link to={path} className="menu-link">
-                  {name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      <Container>
+        <div className="title">
+          <Link className="title-link" to="/">
+            {title}
+          </Link>
+        </div>
+        <nav className="nav">
+          <ul className="menu">
+            {menu.map(({ name, path }) => {
+              const itemClasss = classnames({
+                'menu-item': true,
+                active: path === pathname,
+              });
+              return (
+                <li className={itemClasss} key={path}>
+                  <Link to={path} className="menu-link">
+                    {name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </Container>
     </header>
   );
 };

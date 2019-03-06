@@ -28,6 +28,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-grid-system": "^4.4.3",
     "react-helmet": "^5.2.0",
     "sass": "^1.17.2"
   },
