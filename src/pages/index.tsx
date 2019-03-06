@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container } from 'react-grid-system';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import useBlogPosts from '../hooks/useBlogPosts';
 import DefaultLayout from '../layouts/DefaultLayout';
@@ -15,14 +15,19 @@ export default (props: IIndexPageProps) => {
   return (
     <DefaultLayout location={location}>
       <Container>
-        {posts.map(post => {
-          const { title, body } = post;
-          return (
-            <div>
-              <h3>{title}</h3>
-            </div>
-          );
-        })}
+        <Row>
+          <Col lg={8}>
+            {posts.map(post => {
+              const { title, body } = post;
+              return (
+                <div>
+                  <h3>{title}</h3>
+                </div>
+              );
+            })}
+          </Col>
+          <Col lg={4} />
+        </Row>
       </Container>
     </DefaultLayout>
   );

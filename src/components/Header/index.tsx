@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
-import { Container } from 'react-grid-system';
+import { Container } from 'react-bootstrap';
 
 import useSiteMetadata from '../../hooks/useSiteMetadata';
 import useScroll from '../../hooks/useScroll';
@@ -17,7 +17,7 @@ const Header = (props: IHeaderComponentProps) => {
   const { pathname } = props;
 
   const { title, menu } = useSiteMetadata();
-  const [visible, setVisible] = React.useState(true);
+  const [hide, setHide] = React.useState(false);
   const [lastScrollTop, setLastScrollTop] = React.useState(getDocumentScrollTop())
 
   const headerRef = React.createRef<HTMLDivElement>();
@@ -27,12 +27,14 @@ const Header = (props: IHeaderComponentProps) => {
     const scrollTop = getDocumentScrollTop();
     headerHeight = headerHeight || headerRef.current.offsetHeight;
 
-    const isVisible = (scrollTop < headerHeight) || (scrollTop < lastScrollTop);
-    setVisible(isVisible);
+    const outrideHeader = scrollTop < headerHeight;
+    const isScrollUp = scrollTop < lastScrollTop;
+
+    setHide(!(outrideHeader || isScrollUp));
     setLastScrollTop(scrollTop);
   });
 
-  const headerClassName = classnames({ header: true, visible });
+  const headerClassName = classnames({ header: true, hide });
 
   return (
     <header className={headerClassName} ref={headerRef}>

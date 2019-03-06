@@ -2,15 +2,15 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0;
+  opacity: 1;
   z-index: 9999;
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
   transition: opacity ease-out .3s;
 
-  &.visible {
-    opacity: 1;
+  &.hide {
+    opacity: 0;
   }
 
   .title {
