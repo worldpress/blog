@@ -6,9 +6,8 @@
     "module": "commonjs",
     "target": "esnext",
     "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "lib": ["dom", "es2015", "es2017"]
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./src/**/*"]
 }

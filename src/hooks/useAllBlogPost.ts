@@ -1,15 +1,17 @@
 import * as _ from 'lodash/fp';
 import { useStaticQuery, graphql } from 'gatsby';
+import { getYuqueDocLink, getMarkdownPostLink } from '../utils';
 
-interface IYuqueDoc {
+export interface IYuqueDoc {
   id: number;
   title: string;
+  slug: string;
   description: string;
   body: string;
   created_at: string;
 }
 
-interface IMarkdownPostNode {
+export interface IMarkdownFile {
   id: number;
   frontmatter: {
     title: string;
@@ -20,13 +22,13 @@ interface IMarkdownPostNode {
   fileAbsolutePath: string;
 }
 
-interface IBlogPost {
+export interface IBlogPost {
   id: number;
   title: string;
+  link: string;
   excerpt: string;
   body: string;
   created_at: string;
-  type: string;
 }
 
 const mapEdgesNode = _.compose(
@@ -36,26 +38,30 @@ const mapEdgesNode = _.compose(
 
 const yuqueDoc2Post = _.map((doc: IYuqueDoc): IBlogPost => {
   const { id, title, description, body, created_at } = doc;
+  const link = getYuqueDocLink(doc);
+
   return {
     id,
+    link,
     title,
     excerpt: description,
     body,
     created_at,
-    type: 'yuque',
   };
 });
 
 const markdown2Post = _.compose(
-  _.map((markdown: IMarkdownPostNode): IBlogPost => {
-    const { id, frontmatter: { title, date }, excerpt, rawMarkdownBody } = markdown;
+  _.map((markdownFile: IMarkdownFile): IBlogPost => {
+    const { id, frontmatter: { title, date }, excerpt, rawMarkdownBody } = markdownFile;
+    const link = getMarkdownPostLink(markdownFile);
+
     return {
       id,
+      link,
       title,
       excerpt,
       body: rawMarkdownBody,
       created_at: date,
-      type: 'markdown',
     };
   }),
   // @ts-ignore
@@ -67,13 +73,14 @@ const sortByCreatedTimeDesc = _.compose(
   _.sortBy(['created_at']),
 );
 
-const useBlogPosts = (): IBlogPost[] => {
+const useAllBlogPost = (): IBlogPost[] => {
   const { allYuqueDoc, allMarkdownRemark } = useStaticQuery(graphql`
     query GetAllBlogPost {
       allYuqueDoc {
         edges {
           node {
             id
+            slug
             title
             body
             description
@@ -89,7 +96,7 @@ const useBlogPosts = (): IBlogPost[] => {
               title
               date
             }
-            excerpt
+            excerpt(truncate: true)
             rawMarkdownBody
             fileAbsolutePath
           }
@@ -106,4 +113,4 @@ const useBlogPosts = (): IBlogPost[] => {
   return posts as IBlogPost[];
 };
 
-export default useBlogPosts;
+export default useAllBlogPost;

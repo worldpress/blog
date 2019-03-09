@@ -51,11 +51,11 @@ const Footer = () => {
       </div>
       <div className="extra">
         {extra.map(({ title, items }) => (
-          <div className="block">
+          <div className="block" key={title}>
             <span className="block-title">{title}</span>
             <ul className="block-items">
               {items.map(({ name, link }) => (
-                <li className="block-item">
+                <li className="block-item" key={link}>
                   <a className="block-link" href={link}>
                     {name}
                   </a>

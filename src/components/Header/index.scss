@@ -18,12 +18,16 @@
     float: left;
 
     .title-link {
+      margin: 0;
       color: #333;
-      line-height: 1;
       font-size: 20px;
       text-transform: uppercase;
       text-decoration: none;
       font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .title-icon {
+      margin-right: 5px;
     }
   }
 
@@ -39,7 +43,8 @@
 
     .menu-item {
       display: inline-block;
-      padding: 22px 15px;
+      padding: 23px 15px;
+      font-size: 16px;
       position: relative;
 
       &.active {
@@ -52,8 +57,8 @@
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
-          border-left: 4px solid transparent;
-          border-right: 4px solid transparent;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
           border-bottom: 8px solid rgba(0, 0, 0, 0.04);
         }
       }

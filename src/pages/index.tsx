@@ -1,34 +1,38 @@
 import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import queryString from 'query-string';
+import _ from 'lodash/fp';
 
-import useBlogPosts from '../hooks/useBlogPosts';
+import useAllBlogPost from '../hooks/useAllBlogPost';
 import DefaultLayout from '../layouts/DefaultLayout';
+import PostList from '../components/PostList';
+import Pagination from '../components/Pagination';
 
 interface IIndexPageProps {
   location: Location;
 }
 
+const PAGE_SIZE = 15;
+
 export default (props: IIndexPageProps) => {
-  const { location } = props;
-  const posts = useBlogPosts();
+  const query = queryString.parse(props.location.search);
+  const pageNum = _.toNumber(query.page || 1);
+
+  const allBlogPost = useAllBlogPost();
+  const total = allBlogPost.length;
+  const posts = allBlogPost.slice((pageNum - 1) * PAGE_SIZE , pageNum * PAGE_SIZE);
 
   return (
     <DefaultLayout location={location}>
       <Container>
         <Row>
           <Col lg={8}>
-            {posts.map(post => {
-              const { title, body } = post;
-              return (
-                <div>
-                  <h3>{title}</h3>
-                </div>
-              );
-            })}
+            <PostList dataSource={posts} />
+            <Pagination page={pageNum} size={PAGE_SIZE} total={total} />
           </Col>
-          <Col lg={4} />
         </Row>
       </Container>
+      <Col lg={4} />
     </DefaultLayout>
   );
 };

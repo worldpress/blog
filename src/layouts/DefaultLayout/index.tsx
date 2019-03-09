@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Container, Row } from 'react-bootstrap';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -10,7 +11,9 @@ interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 const DefaultLayout = (props: IDefaultLayoutProps) => {
-  const { location: { pathname } } = props;
+  const {
+    location: { pathname },
+  } = props;
   return (
     <div className="layout default">
       <Header pathname={pathname} />
@@ -19,7 +22,7 @@ const DefaultLayout = (props: IDefaultLayoutProps) => {
       </div>
       <Footer />
     </div>
- );
+  );
 };
 
 export default DefaultLayout;

@@ -1,17 +1,24 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { navigate, Link } from 'gatsby';
 import { Container } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 
 import useSiteMetadata from '../../hooks/useSiteMetadata';
-import useScroll from '../../hooks/useScroll';
+import useWindowScroll from '../../hooks/useWindowScroll';
 import { getDocumentScrollTop } from '../../utils';
 
 import './index.scss';
 
+library.add(faCode);
+
 interface IHeaderComponentProps {
   pathname: string;
 }
+
+let headerHeight: number = 0;
 
 const Header = (props: IHeaderComponentProps) => {
   const { pathname } = props;
@@ -21,11 +28,12 @@ const Header = (props: IHeaderComponentProps) => {
   const [lastScrollTop, setLastScrollTop] = React.useState(getDocumentScrollTop())
 
   const headerRef = React.createRef<HTMLDivElement>();
-  let headerHeight = -1;
 
-  useScroll(event => {
+  useWindowScroll(event => {
     const scrollTop = getDocumentScrollTop();
-    headerHeight = headerHeight || headerRef.current.offsetHeight;
+    if (!headerHeight) {
+      headerHeight = headerRef.current.offsetHeight >> 1;
+    }
 
     const outrideHeader = scrollTop < headerHeight;
     const isScrollUp = scrollTop < lastScrollTop;
@@ -40,9 +48,15 @@ const Header = (props: IHeaderComponentProps) => {
     <header className={headerClassName} ref={headerRef}>
       <Container>
         <div className="title">
-          <Link className="title-link" to="/">
+          <h1 className="title-link" onClick={() => navigate('/')}>
+            <FontAwesomeIcon
+              className="title-icon"
+              icon="code"
+              size="sm"
+              color="#dc001c"
+            />
             {title}
-          </Link>
+          </h1>
         </div>
         <nav className="nav">
           <ul className="menu">

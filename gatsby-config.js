@@ -4,9 +4,9 @@ module.exports = {
     author: 'Richard Jiang',
     since: 2015,
     menu: [
-      { name: 'Home', path: '/' },
-      { name: 'Archives', path: '/archives' },
-      { name: 'About', path: '/about' },
+      { name: '首页', path: '/' },
+      { name: '所有文章', path: '/archives' },
+      { name: '关于我', path: '/about' },
     ],
     socials: [
       { name: 'zhihu', link: 'https://www.zhihu.com/people/ahonn/activities' },
@@ -36,15 +36,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-yuque-docs',
       options: {
-        user: 'fe9',
-        repo: 'select',
+        user: 'ahonn',
+        repo: 'blog',
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
-      options: {
-        excerpt_separator: `<!-- more -->`,
-      },
+      // options: {
+      //   excerpt_separator: `<!-- more -->`,
+      // },
     },
   ],
 };

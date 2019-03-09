@@ -1,0 +1,35 @@
+.post-preview {
+  max-width: 700px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  .post-header {
+    .post-title {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    .post-meta {
+      color: #6C7185;
+      font-size: 14px;
+
+      .date-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .post-content {
+    .post-excerpt {
+      margin-top: 10px;
+      color: #2E3444;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+  }
+
+  border-bottom: 1px solid rgba(0,0,0,.0785);
+}

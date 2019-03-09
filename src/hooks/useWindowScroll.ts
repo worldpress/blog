@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 type CallbackFunc = (event: Event) => void;
 
-const useSrcoll = (callback: CallbackFunc) => {
+const useWindowSrcoll = (callback: CallbackFunc) => {
   useEffect(() => {
     const scrollListener: EventListener = event => callback(event);
     document.addEventListener('scroll', scrollListener);
@@ -12,4 +12,4 @@ const useSrcoll = (callback: CallbackFunc) => {
   });
 };
 
-export default useSrcoll;
+export default useWindowSrcoll;
