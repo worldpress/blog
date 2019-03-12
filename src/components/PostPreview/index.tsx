@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 
-import { IBlogPost } from '../../hooks/useBlogPosts';
+import { IBlogPost } from '../../hooks/useAllBlogPost';
 import './index.scss';
 
 library.add(faClock);
@@ -17,7 +17,6 @@ interface IPostPreviewProps {
 const PostPreview = (props: IPostPreviewProps) => {
   const { post } = props;
   const { link, title, excerpt, created_at } = post;
-  console.log(post);
 
   const handleClick = () => navigate(link);
 

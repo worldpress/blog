@@ -34,10 +34,10 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-yuque-docs',
+      resolve: 'gatsby-source-github-issue',
       options: {
-        user: 'ahonn',
-        repo: 'blog',
+        owner: 'frontend9',
+        repo: 'fe9-library',
       },
     },
     {

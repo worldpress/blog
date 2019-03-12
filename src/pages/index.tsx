@@ -19,6 +19,7 @@ export default (props: IIndexPageProps) => {
   const pageNum = _.toNumber(query.page || 1);
 
   const allBlogPost = useAllBlogPost();
+  console.log(allBlogPost);
   const total = allBlogPost.length;
   const posts = allBlogPost.slice((pageNum - 1) * PAGE_SIZE , pageNum * PAGE_SIZE);
 

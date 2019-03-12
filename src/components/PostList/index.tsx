@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import './index.scss';
-import { IBlogPost } from '../../hooks/useBlogPosts';
+import { IBlogPost } from '../../hooks/useAllBlogPost';
 import PostPreview from '../PostPreview';
 
 interface IPostListProps {

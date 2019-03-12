@@ -1,17 +1,17 @@
 {
-  "name": "gatsby-source-yuque-docs",
-  "description": "Gatsby source plugin for yuque docs",
+  "name": "gatsby-source-github-issue",
+  "description": "Gatsby source plugin for github issue",
   "version": "1.0.0",
   "author": "Ahonn Jiang <ahonn95@outlook.com>",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "https://github.com/ahonn/gatsby-source-yuque-docs#readme",
+  "homepage": "https://github.com/ahonn/gatsby-source-github-issue#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahonn/gatsby-source-yuque-docs"
+    "url": "git+https://github.com/ahonn/gatsby-source-github-issue"
   },
   "bugs": {
-    "url": "https://github.com/ahonn/gatsby-source-yuque-docs/issues"
+    "url": "https://github.com/ahonn/gatsby-source-github-issue/issues"
   },
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__",
