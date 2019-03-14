@@ -36,8 +36,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-github-issue',
       options: {
-        owner: 'frontend9',
-        repo: 'fe9-library',
+        owner: 'creeperyang',
+        repo: 'blog',
       },
     },
     {

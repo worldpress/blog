@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 import queryString from 'query-string';
 import _ from 'lodash/fp';
 
@@ -19,21 +18,13 @@ export default (props: IIndexPageProps) => {
   const pageNum = _.toNumber(query.page || 1);
 
   const allBlogPost = useAllBlogPost();
-  console.log(allBlogPost);
   const total = allBlogPost.length;
   const posts = allBlogPost.slice((pageNum - 1) * PAGE_SIZE , pageNum * PAGE_SIZE);
 
   return (
     <DefaultLayout location={location}>
-      <Container>
-        <Row>
-          <Col lg={8}>
-            <PostList dataSource={posts} />
-            <Pagination page={pageNum} size={PAGE_SIZE} total={total} />
-          </Col>
-        </Row>
-      </Container>
-      <Col lg={4} />
+      <PostList dataSource={posts} />
+      <Pagination page={pageNum} size={PAGE_SIZE} total={total} />
     </DefaultLayout>
   );
 };

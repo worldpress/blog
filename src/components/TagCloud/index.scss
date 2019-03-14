@@ -1,0 +1,30 @@
+.tag-cloud {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin-right: 50px;
+  border-bottom: 1px solid #f0f0f0;
+
+  .tag-cloud-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    font-size: 15px;
+    font-weight: 200;
+  }
+
+  .tag-cloud-content {
+    overflow: auto;
+
+    .tag-cloud-item__link {
+      float: left;
+      padding: 5px 10px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      color: #333;
+      font-size: 14px;
+      text-decoration: none;
+      border-radius: 3px;
+      border: 1px solid #f0f0f0;
+    }
+  }
+}

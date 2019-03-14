@@ -1,0 +1,40 @@
+.pagination {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  max-width: 700px;
+  font-size: 18px;
+  overflow: auto;
+
+  .pagination-before {
+    width: 50%;
+    float: left;
+    padding: 20px 0;
+    text-align: left;
+
+    .pagination-icon {
+      margin-right: 5px;
+    }
+  }
+
+  .pagination-after {
+    width: 50%;
+    float: right;
+    padding: 20px 0;
+    text-align: right;
+
+    .pagination-icon {
+      margin-left: 5px;
+    }
+  }
+
+  .pagination-link {
+    height: 100%;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #dc001c;
+    }
+  }
+}
