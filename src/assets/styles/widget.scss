@@ -1,0 +1,18 @@
+.widget {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin-right: 50px;
+  border-bottom: 1px solid #f0f0f0;
+
+  .widget-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    font-size: 15px;
+    font-weight: 200;
+  }
+
+  .widget-content {
+    overflow: auto;
+  }
+}

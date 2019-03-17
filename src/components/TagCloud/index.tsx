@@ -1,8 +1,10 @@
 import * as React from 'react';
+import * as _ from 'lodash/fp';
 import { Link } from 'gatsby';
 
 import useAllBlogTags from '../../hooks/useAllBlogTags';
 
+import '../../assets/styles/widget.scss';
 import './index.scss';
 
 interface ITagCloudProps {
@@ -12,20 +14,21 @@ interface ITagCloudProps {
 const TagCloud = (props: ITagCloudProps) => {
   const { size } = props;
   const tags = useAllBlogTags();
+  const sortTagNames = Object.keys(tags).sort((a, b) => tags[b] - tags[a]);
 
   return (
-    <div className="tag-cloud">
-      <h3 className="tag-cloud-title">
+    <div className="widget tag-cloud">
+      <h3 className="widget-title tag-cloud-title">
         标签云
       </h3>
-      <div className="tag-cloud-content">
-        {tags.slice(0, size).map(tag => (
+      <div className="widget-content">
+        {sortTagNames.slice(0, size).map(tag => (
           <Link
-            className="tag-cloud-item__link"
+            className="tag-item__link"
             key={tag}
             to={`/tag/${tag}`}
           >
-            <span className="tag-cloud-item__text">
+            <span className="tag-item__text">
               {tag}
             </span>
           </Link>

@@ -21,3 +21,11 @@ declare interface IBlogPost {
   created_at: string;
   updated_at: string;
 }
+
+declare interface IBlogTags {
+  [key: string]: number;
+}
+
+declare interface IBlogArchives {
+  [key: string]: IBlogPost[];
+}
