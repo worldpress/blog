@@ -3,11 +3,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
+import Recent from '../../components/widgets/Recent';
 import Tags from '../../components/widgets/Tags';
 import Archives from '../../components/widgets/Archives';
 
 import useSiteMetadata from '../../hooks/useSiteMetadata';
-
 import './index.scss';
 
 interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
@@ -29,6 +29,7 @@ const DefaultLayout = (props: IDefaultLayoutProps) => {
               {props.children}
             </Col>
             <Col lg={4}>
+              <Recent />
               <Tags />
               <Archives />
             </Col>

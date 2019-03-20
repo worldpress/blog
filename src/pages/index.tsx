@@ -14,7 +14,8 @@ interface IIndexPageProps {
 const PAGE_SIZE = 15;
 
 export default (props: IIndexPageProps) => {
-  const query = queryString.parse(props.location.search);
+  const { location } = props;
+  const query = queryString.parse(location.search);
   const pageNum = _.toNumber(query.page || 1);
 
   const allBlogPost = useAllBlogPost();

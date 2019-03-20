@@ -1,0 +1,28 @@
+.recent {
+  .recent-post-item {
+    margin-bottom: 15px;
+  }
+
+  .recent-post-item__link {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .recent-post-item-created_at {
+    display: block;
+    color: #7a7a7a;
+    font-size:  13px;
+    line-height: 1;
+  }
+
+  .recent-post-item-title {
+    display: block;
+    color: #555;
+    font-size:  15px;
+
+    &:hover {
+      color: #dc001c;
+      text-decoration: underline;
+    }
+  }
+}

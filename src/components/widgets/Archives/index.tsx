@@ -14,42 +14,48 @@ import './index.scss';
 
 library.add(faCaretRight);
 
-const ARCHIVES_SIZE = 6;
+interface IArchivesProps {
+  size: number;
+}
 
-const Archives = () => {
+const Archives = (props: IArchivesProps) => {
+  const { size } = props;
   const archives = getArchivesGroupByMonth(useAllBlogPost());
-
-  console.log(archives);
 
   return (
     <div className="widget archives">
       <h3 className="widget-title">
-        归档
+        &lt;归档 /&gt;
       </h3>
       <div className="widget-content">
-        {archives.slice(0, ARCHIVES_SIZE).map(({ month, count }) => (
-          <Link
-            className="archive-item__link"
-            key={month}
-            to={`/arvhive/${month}`}
-          >
-            <FontAwesomeIcon
-              className="archive-item__icon"
-              icon="caret-right"
-            />
-            <span className="archive-item__text">
-              <span className="archive-item-month">
-                {format(month, 'YYYY年MM月')}
+        {archives.slice(0, size).map(({ month, count }) => (
+          <div className="archive-item" key={month}>
+            <Link
+              className="archive-item__link"
+              to={`/arvhive/${month}`}
+            >
+              <FontAwesomeIcon
+                className="archive-item__icon"
+                icon="caret-right"
+              />
+              <span className="archive-item__text">
+                <span className="archive-item-month">
+                  {format(month, 'YYYY年MM月')}
+                </span>
+                <span className="archive-item-count">
+                  ({count})
+                </span>
               </span>
-              <span className="archive-item-count">
-                ({count})
-              </span>
-            </span>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     </div>
   );
+};
+
+Archives.defaultProps = {
+  size: 6,
 };
 
 export default Archives;
