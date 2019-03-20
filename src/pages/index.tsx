@@ -4,8 +4,8 @@ import _ from 'lodash/fp';
 
 import useAllBlogPost from '../hooks/useAllBlogPost';
 import DefaultLayout from '../layouts/DefaultLayout';
-import PostList from '../components/PostList';
-import Pagination from '../components/Pagination';
+import PostList from '../components/shares/PostList';
+import Pagination from '../components/shares/Pagination';
 
 interface IIndexPageProps {
   location: Location;

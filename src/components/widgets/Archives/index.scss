@@ -1,0 +1,33 @@
+.archives {
+  .archive-item__link {
+    display: block;
+    padding:  3px 0;
+    color: #666;
+    font-size: 16px;
+    text-decoration: none;
+
+    &:hover {
+      color: #444;
+    }
+  }
+
+  .archive-item__icon {
+    margin-right: 7px;
+  }
+
+  .archive-item__text {
+    letter-spacing: 1px;
+  }
+
+  .archive-item-month {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .archive-item-count {
+    padding-left: 3px;
+    color: #aaa;
+    font-size: .85em;
+  }
+}

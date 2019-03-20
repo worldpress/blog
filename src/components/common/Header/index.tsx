@@ -6,33 +6,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 
-import useSiteMetadata from '../../hooks/useSiteMetadata';
-import useWindowScroll from '../../hooks/useWindowScroll';
-import { getDocumentScrollTop } from '../../utils';
+import useWindowScroll from '../../../hooks/useWindowScroll';
+import { getDocumentScrollTop } from '../../../utils';
 
 import './index.scss';
 
 library.add(faCode);
 
 interface IHeaderComponentProps {
-  pathname: string;
+  location: Location;
+  metadata: ISiteMetadata;
 }
 
 let headerHeight: number = 0;
 
 const Header = (props: IHeaderComponentProps) => {
-  const { pathname } = props;
+  const { pathname } = props.location;
+  const { title, menu } = props.metadata;
 
-  const { title, menu } = useSiteMetadata();
   const [hide, setHide] = React.useState(false);
-  const [lastScrollTop, setLastScrollTop] = React.useState(getDocumentScrollTop())
-
+  const [lastScrollTop, setLastScrollTop] = React.useState(getDocumentScrollTop());
   const headerRef = React.createRef<HTMLDivElement>();
 
-  useWindowScroll(event => {
+  useWindowScroll((event) => {
     const scrollTop = getDocumentScrollTop();
     if (!headerHeight) {
-      headerHeight = headerRef.current.offsetHeight >> 1;
+      headerHeight = headerRef.current.offsetHeight / 2;
     }
 
     const outrideHeader = scrollTop < headerHeight;
@@ -63,7 +62,7 @@ const Header = (props: IHeaderComponentProps) => {
             {menu.map(({ name, path }) => {
               const itemClasss = classnames({
                 'menu-item': true,
-                active: path === pathname,
+                'active': path === pathname,
               });
               return (
                 <li className={itemClasss} key={path}>

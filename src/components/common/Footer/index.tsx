@@ -4,16 +4,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-import useSiteMetadata from '../../hooks/useSiteMetadata';
 import './index.scss';
 
 library.add(faHeart);
 
-const Footer = () => {
-  const { since, author, menu, socials, friends } = useSiteMetadata();
+interface IFooterProps {
+  metadata: ISiteMetadata;
+}
+
+const Footer = (props: IFooterProps) => {
+  const { since, author, menu, socials, friends } = props.metadata;
 
   const currentYear = new Date().getFullYear();
-  const extra = [{ title: 'SOCIALS / 社交', items: socials }, { title: 'FRIENDS / 友链', items: friends }];
+  const extra = [
+    { title: 'SOCIALS / 社交', items: socials },
+    { title: 'FRIENDS / 友链', items: friends },
+  ];
 
   return (
     <footer className="footer">

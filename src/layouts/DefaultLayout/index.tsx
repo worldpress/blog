@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import TagCloud from '../../components/TagCloud';
-import Archives from '../../components/Archives';
+import Header from '../../components/common/Header';
+import Footer from '../../components/common/Footer';
+import Tags from '../../components/widgets/Tags';
+import Archives from '../../components/widgets/Archives';
+
+import useSiteMetadata from '../../hooks/useSiteMetadata';
 
 import './index.scss';
 
@@ -14,12 +16,12 @@ interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 const DefaultLayout = (props: IDefaultLayoutProps) => {
-  const {
-    location: { pathname },
-  } = props;
+  const { location } = props;
+  const metadata = useSiteMetadata();
+
   return (
     <div className="layout default">
-      <Header pathname={pathname} />
+      <Header location={location} metadata={metadata} />
       <div className="content">
         <Container>
           <Row>
@@ -27,13 +29,13 @@ const DefaultLayout = (props: IDefaultLayoutProps) => {
               {props.children}
             </Col>
             <Col lg={4}>
-              <TagCloud />
+              <Tags />
               <Archives />
             </Col>
           </Row>
         </Container>
       </div>
-      <Footer />
+      <Footer metadata={metadata} />
     </div>
   );
 };

@@ -1,4 +1,23 @@
-declare const graphql: (query: TemplateStringsArray) => void
+declare const graphql: (query: TemplateStringsArray) => void;
+
+declare interface ISiteMenuItem {
+  name: string;
+  path: string;
+}
+
+declare interface ISiteMetaLink {
+  name: string;
+  link: string;
+}
+
+declare interface ISiteMetadata {
+  title: string;
+  since: number;
+  author: string;
+  menu: ISiteMenuItem[];
+  socials: ISiteMetaLink[];
+  friends: ISiteMetaLink[];
+}
 
 declare interface IMarkdownFile {
   id: string;
@@ -23,9 +42,13 @@ declare interface IBlogPost {
 }
 
 declare interface IBlogTags {
-  [key: string]: number;
+  name: string;
+  count: number;
+  posts: IBlogPost[];
 }
 
 declare interface IBlogArchives {
-  [key: string]: IBlogPost[];
+  month: string;
+  count: number;
+  posts: IBlogPost[];
 }
