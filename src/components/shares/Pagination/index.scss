@@ -11,8 +11,9 @@
     padding: 20px 0;
     text-align: left;
 
-    .pagination-icon {
+    .pagination__icon {
       margin-right: 5px;
+      vertical-align: text-top;
     }
   }
 
@@ -22,12 +23,13 @@
     padding: 20px 0;
     text-align: right;
 
-    .pagination-icon {
+    .pagination__icon {
       margin-left: 5px;
+      vertical-align: text-top;
     }
   }
 
-  .pagination-link {
+  .pagination__link {
     height: 100%;
     text-decoration: none;
     color: #333;

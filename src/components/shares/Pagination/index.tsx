@@ -1,14 +1,9 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import _ from 'lodash/fp';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import './index.scss';
-
-library.add(faChevronLeft, faChevronRight);
 
 interface IPagintionProps {
   page: number;
@@ -27,9 +22,11 @@ const Pagination = (props: IPagintionProps) => {
     <div className="pagination">
       {hasBefore && (
         <div className="pagination-before">
-          <Link className="pagination-link" to={`/?page=${page + 1}`}>
-            <FontAwesomeIcon className="pagination-icon" icon="chevron-left" />
-            <span className="pagination-text">
+          <Link className="pagination__link" to={`/?page=${page + 1}`}>
+            <span className="pagination__icon">
+              <FaChevronLeft />
+            </span>
+            <span className="pagination__text">
               在这之前
             </span>
           </Link>
@@ -37,11 +34,13 @@ const Pagination = (props: IPagintionProps) => {
       )}
       {hasAfter && (
         <div className="pagination-after">
-          <Link className="pagination-link" to={`/?page=${page - 1}`}>
+          <Link className="pagination__link" to={`/?page=${page - 1}`}>
             <span className="pagination-text">
               在这之后
             </span>
-            <FontAwesomeIcon className="pagination-icon" icon="chevron-right" />
+            <span className="pagination__icon">
+              <FaChevronRight />
+            </span>
           </Link>
         </div>
       )}

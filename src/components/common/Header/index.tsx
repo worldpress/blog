@@ -2,16 +2,12 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { navigate, Link } from 'gatsby';
 import { Container } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { FaCode } from 'react-icons/fa';
 
 import useWindowScroll from '../../../hooks/useWindowScroll';
 import { getDocumentScrollTop } from '../../../utils';
 
 import './index.scss';
-
-library.add(faCode);
 
 interface IHeaderComponentProps {
   location: Location;
@@ -25,7 +21,7 @@ const Header = (props: IHeaderComponentProps) => {
   const { title, menu } = props.metadata;
 
   const [hide, setHide] = React.useState(false);
-  const [lastScrollTop, setLastScrollTop] = React.useState(getDocumentScrollTop());
+  const [lastScrollTop, setLastScrollTop] = React.useState(0);
   const headerRef = React.createRef<HTMLDivElement>();
 
   useWindowScroll((event) => {
@@ -47,13 +43,10 @@ const Header = (props: IHeaderComponentProps) => {
     <header className={headerClassName} ref={headerRef}>
       <Container>
         <div className="title">
-          <h1 className="title-link" onClick={() => navigate('/')}>
-            <FontAwesomeIcon
-              className="title-icon"
-              icon="code"
-              size="sm"
-              color="#dc001c"
-            />
+          <h1 className="title__link" onClick={() => navigate('/')}>
+            <span className="title__icon">
+              <FaCode />
+            </span>
             {title}
           </h1>
         </div>

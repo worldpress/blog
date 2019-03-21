@@ -17,8 +17,9 @@
     padding: 20px 0;
     float: left;
     cursor: pointer;
+    height: 72px;
 
-    .title-link {
+    .title__link {
       margin: 0;
       color: #333;
       font-size: 20px;
@@ -27,8 +28,12 @@
       font-family: 'Source Sans Pro', sans-serif;
     }
 
-    .title-icon {
+    .title__icon {
+      display: inline-block;
       margin-right: 5px;
+      font-size: 20px;
+      color: #dc001c;
+      vertical-align: text-top;
     }
   }
 

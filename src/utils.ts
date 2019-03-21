@@ -4,6 +4,7 @@ import format from 'date-fns/format';
 
 // getDocumentScrollTop :: () -> number
 export const getDocumentScrollTop = () => {
+  console.log();
   return window.pageYOffset || document.documentElement.scrollTop;
 };
 
