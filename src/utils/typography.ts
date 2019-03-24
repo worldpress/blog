@@ -5,6 +5,9 @@ import Wordpress2016 from 'typography-theme-wordpress-2016';
 // @ts-ignore
 // tslint:disable-next-line:no-shadowed-variable
 Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
+  'body': {
+    color: '#2e3444',
+  },
   'h1, h2, h3, h4, h5, h6': {
     fontFamily: Wordpress2016.headerFontFamily.join(','),
     fontWeight: '400',
@@ -25,9 +28,6 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
     paddingBottom: rhythm(1 / 4),
     background: '#fafafa',
     borderLeft: `${rhythm(1 / 8)} solid #dc001c`,
-  },
-  'code': {
-    fontSize: rhythm(9 / 10),
   },
 });
 

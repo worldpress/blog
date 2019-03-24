@@ -1,26 +1,36 @@
-.post-preview {
+.post {
   padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.0785);
+
+  &.excerpt {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0785);
+
+    .post-header {
+      margin-top: 0;
+    }
+  }
 
   .post-header {
+    margin-top: 20px;
     margin-bottom: 15px;
 
     .post-title {
-      margin-top: 0;
+      margin: 0;
       margin-bottom: 0.75rem;
-      font-size: 26px;
+      font-size: 32px;
       font-weight: 400;
       color: #dc001c;
 
-      &:hover {
-        color: lighten(#dc001c, 5);
-      }
-
-      .post-title__link {
+      &__link {
         color: inherit;
+        font-size: 28px;
         text-decoration: none;
         box-shadow: none;
+
+        &:hover {
+          color: lighten(#dc001c, 5);
+        }
       }
     }
 
@@ -43,9 +53,9 @@
   .post-content {
     .post-excerpt {
       margin-top: 10px;
+      margin-bottom: 20px;
       color: #2e3444;
       font-size: 16px;
-      line-height: 1.8;
     }
 
     .post-read-more {
@@ -53,12 +63,11 @@
       color: #dc001c;
 
       &:hover {
-        color: lighten(#dc001c, 5)
+        color: lighten(#dc001c, 5);
       }
 
       .post-read-more__link {
         color: inherit;
-        text-decoration: none;
         box-shadow: none;
       }
     }

@@ -30,6 +30,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-sass`,

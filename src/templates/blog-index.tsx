@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Layout from '../components/Layout';
-import PostPreview from '../components/PostPreview';
+import Post from '../components/Post';
 import Pagination from '../components/Pagination';
 import RecentWidget from '../components/RecentWidget';
 import TagsWidget from '../components/TagsWidget';
@@ -35,7 +35,7 @@ const IndexPageTemplate = (props: IIndexPageProps) => {
           <Col lg={8}>
             <div className="posts">
               {posts.map((node: IMarkdownRemarkNode) => (
-                <PostPreview key={node.id} post={node} />
+                <Post key={node.id} post={node} excerpt />
               ))}
             </div>
             <Pagination page={page} size={limit} total={total} />

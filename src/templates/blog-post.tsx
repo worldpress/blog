@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import PostDetail from '../components/PostDetail';
+import Post from '../components/Post';
 
 interface IPostPageProps {
   location: Location;
@@ -23,7 +23,7 @@ const PostPageTemplate = (props: IPostPageProps) => {
       <Container>
         <Row className="justify-content-md-center">
           <Col lg={8}>
-            <PostDetail post={data.markdownRemark} />
+            <Post post={data.markdownRemark} />
           </Col>
         </Row>
       </Container>
@@ -42,6 +42,7 @@ export const query = graphql`
       }
       excerpt(truncate: true)
       html
+      timeToRead
     }
   }
 `;

@@ -43,10 +43,11 @@
     "gatsby-remark-autolink-headers": "^2.0.16",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^3.0.10",
-    "gatsby-remark-responsive-iframe": "^2.1.1",
     "gatsby-remark-prismjs": "^3.2.6",
+    "gatsby-remark-responsive-iframe": "^2.1.1",
     "gatsby-source-filesystem": "^2.0.22",
     "gatsby-transformer-remark": "^2.2.6",
+    "gatsby-transformer-sharp": "^2.1.17",
     "sass": "^1.17.2",
     "source-map-support": "^0.5.10",
     "ts-node": "^8.0.3"
