@@ -1,0 +1,29 @@
+.recent {
+  .recent-item {
+    margin-bottom: 15px;
+
+    &__link {
+      color: #333;
+      text-decoration: none;
+    }
+
+    &__date {
+      display: block;
+      margin-bottom: 5px;
+      color: #7a7a7a;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    &__title {
+      display: block;
+      color: #555;
+      font-size: 15px;
+
+      &:hover {
+        color: #dc001c;
+        text-decoration: underline;
+      }
+    }
+  }
+}

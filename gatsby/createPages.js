@@ -1,18 +1,71 @@
 'use strict';
 
-require('source-map-support').install();
-require('ts-node').register({
-  compilerOptions: {
-    module: 'commonjs',
-    target: 'es2017',
-  },
-});
-
 const path = require('path');
 
-module.exports = ({ actions, graphql }) => {
-  const { createPage } = actions;
+const PAGE_SIZE = 15;
 
+function createIndexPages(actions, result) {
+  const { createPage, createRedirect } = actions;
+
+  const posts = result.data.allMarkdownRemark.edges;
+  const total = posts.length;
+
+  const pageTotal = Math.round(total / PAGE_SIZE);
+  for (let page = 1; page <= pageTotal; page += 1) {
+    console.log(`createPage: /page/${page}`);
+    createPage({
+      path: page === 1 ? '/' : `/page/${page}`,
+      component: path.resolve('src/templates/blog-index.tsx'),
+      context: {
+        page,
+        skip: (page - 1) * PAGE_SIZE,
+        limit: PAGE_SIZE,
+        total,
+      }
+    });
+  }
+
+  createRedirect({
+    fromPath: '/page/1',
+    toPath: '/',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+}
+
+function createPostPages(actions, result) {
+  const { createPage, createRedirect } = actions;
+
+  const posts = result.data.allMarkdownRemark.edges;
+  posts.forEach(({ node }) => {
+    const { id, frontmatter, fileAbsolutePath } = node;
+    const { title, date } = frontmatter;
+
+    const postPath = `/${date}/${title}`;
+
+    createPage({
+      path: postPath,
+      component: path.resolve('src/templates/blog-post.tsx'),
+      context: {
+        id,
+      },
+    });
+
+    // hexo post redirect
+    if (fileAbsolutePath !== null) {
+      const [, fileName] = fileAbsolutePath.match(/([^\\/]+)\.md$/);
+      console.log(`/${date}/${fileName}`);
+      createRedirect({
+        fromPath: `/${date}/${fileName}`,
+        toPath: postPath,
+        isPermanent: true,
+        redirectInBrowser: true,
+      });
+    }
+  });
+}
+
+module.exports = ({ actions, graphql }) => {
   return graphql(`
     {
       allMarkdownRemark(
@@ -26,8 +79,6 @@ module.exports = ({ actions, graphql }) => {
               date(formatString: "YYYY/MM/DD")
               tags
             }
-            excerpt(truncate: true)
-            rawMarkdownBody
             fileAbsolutePath
           }
         }
@@ -38,24 +89,8 @@ module.exports = ({ actions, graphql }) => {
       result.errors.forEach(e => console.error(e.toString()));
       return Promise.reject(result.errors);
     }
-
-    const posts = result.data.allMarkdownRemark.edges;
-    const tags = new Set();
-
-    posts.forEach(({ node }) => {
-      const { id, frontmatter } = node;
-      const { title, date, tags } = frontmatter;
-
-      const postPath = `/${date}/${title}`;
-
-      createPage({
-        path: postPath,
-        component: path.resolve(`src/templates/post/index.tsx`),
-        context: {
-          id,
-        },
-      });
-    });
+    createIndexPages(actions, result);
+    createPostPages(actions, result);
   });
 
 };

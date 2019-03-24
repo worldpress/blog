@@ -1,0 +1,20 @@
+.tags {
+  .tag-item {
+    font-size: 14px;
+
+    &__link {
+      float: left;
+      padding: 7px 10px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      color: #333;
+      border-radius: 3px;
+      border: 1px solid #f0f0f0;
+      box-shadow: none;
+
+      &:hover {
+        color: #dc001c;
+      }
+    }
+  }
+}

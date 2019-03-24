@@ -19,36 +19,23 @@ declare interface ISiteMetadata {
   friends: ISiteMetaLink[];
 }
 
-declare interface IMarkdownFile {
-  id: string;
+declare interface IMarkdownRemark {
+  edges: IMarkdownRemarkEdge[];
+}
+
+declare interface IMarkdownRemarkEdge {
+  node: IMarkdownRemarkNode;
+}
+
+declare interface IMarkdownRemarkNode {
+  id: number;
   frontmatter: {
     title: string;
     date: string;
     tags: string[];
   };
   excerpt: string;
+  html: string;
   rawMarkdownBody: string;
-  fileAbsolutePath: string | null;
-}
-
-declare interface IBlogPost {
-  id: string;
-  title: string;
-  tags: string[];
-  excerpt: string;
-  body: string;
-  created_at: string;
-  updated_at: string;
-}
-
-declare interface IBlogTags {
-  name: string;
-  count: number;
-  posts: IBlogPost[];
-}
-
-declare interface IBlogArchives {
-  month: string;
-  count: number;
-  posts: IBlogPost[];
+  timeToRead: number;
 }

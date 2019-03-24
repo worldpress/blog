@@ -1,3 +1,13 @@
+'use strict';
+
+require('source-map-support').install()
+require('ts-node').register({
+  compilerOptions: {
+    module: 'commonjs',
+    target: 'es2017',
+  },
+})
+
 module.exports = {
   siteMetadata: {
     title: `Ahonn's Blog`,
@@ -20,6 +30,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -41,10 +52,41 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      // options: {
-      //   excerpt_separator: `<!-- more -->`,
-      // },
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-responsive-iframe',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              maintainCase: true,
+              removeAccents: true,
+            }
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {},
+          },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
+      },
     },
   ],
 };

@@ -1,0 +1,17 @@
+.markdown {
+  .anchor {
+    box-shadow: none;
+
+    svg path {
+      fill: #dc001c;
+    }
+  }
+
+  .gatsby-highlight {
+    margin: 1.75rem 0;
+
+    pre {
+      border-radius: 7px;
+    }
+  }
+}
