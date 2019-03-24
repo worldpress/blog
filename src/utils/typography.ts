@@ -20,6 +20,9 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
   'p': {
     lineHeight: rhythm(9 / 10),
   },
+  'li': {
+    lineHeight: rhythm(9 / 10),
+  },
   'blockquote': {
     fontSize: '1rem',
     marginRight: 0,

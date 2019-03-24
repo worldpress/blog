@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
-import { FaCalendarAlt, FaClock } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaHashtag } from 'react-icons/fa';
 
 import { formatPostDate, formatReadingTime } from '../../utils/helpers';
 import './index.scss';
@@ -13,7 +13,7 @@ interface IPostDetailProps {
 
 const Post = (props: IPostDetailProps) => {
   const { post, excerpt } = props;
-  const { frontmatter: { title, date }, html, excerpt: exp, timeToRead } = post;
+  const { frontmatter: { title, date, tags }, html, excerpt: exp, timeToRead } = post;
   const postLink = `/${date}/${title}`;
 
   const clazz = classnames({
@@ -22,7 +22,7 @@ const Post = (props: IPostDetailProps) => {
   });
 
   return (
-    <div className={clazz}>
+    <article className={clazz}>
       <div className="post-header">
         {excerpt ? (
           <h2 className="post-title">
@@ -64,7 +64,23 @@ const Post = (props: IPostDetailProps) => {
           <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
         )}
       </div>
-    </div>
+      {!excerpt && (
+        <div className="post-footer">
+          <div className="post-tags">
+            {tags.map((name) => (
+              <span className="post-tag">
+                <span className="post-tag__icon">
+                  <FaHashtag />
+                </span>
+                <Link className="post-tag__link" to={`/tag/${name}`}>
+                  {name}
+                </Link>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </article>
   );
 };
 

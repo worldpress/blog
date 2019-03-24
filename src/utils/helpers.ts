@@ -9,7 +9,7 @@ export const formatPostDate = (date: string) => {
 
 // formatReadingTime :: number -> string
 export const formatReadingTime = (time: number) => {
-  const minutes = Math.round(time * Math.E);
+  const minutes = Math.round(time * 2);
   return `预计阅读需要 ${minutes} 分钟`;
 };
 
