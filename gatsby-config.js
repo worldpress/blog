@@ -15,7 +15,6 @@ module.exports = {
     since: 2015,
     menu: [
       { name: '首页', path: '/' },
-      { name: '所有文章', path: '/archives' },
       { name: '关于我', path: '/about' },
     ],
     socials: [

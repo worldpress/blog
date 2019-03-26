@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { FaHeart } from 'react-icons/fa';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.scss';
 
@@ -19,56 +20,62 @@ const Footer = (props: IFooterProps) => {
 
   return (
     <footer className="footer">
-      <div className="copyright">
-        <ul className="menu">
-          {menu.map(({ name, path }) => (
-            <li className="menu-item" key={path}>
-              <Link to={path} className="menu-item__link">
-                {name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="copyright__text">
-          <span>
-            Copyright &copy; {since} - {currentYear}
-          </span>
-          <span className="copyright__icon">
-            <FaHeart />
-          </span>
-          <span>{author}</span>
-        </div>
-        <div className="power-by">
-          <span className="power-item">
-            Power by
-            <a className="power-item__link" href="https://www.gatsbyjs.org/">
-              Gatsbyjs
-            </a>
-          </span>
-          <span className="power-item">
-            Design by
-            <a className="power-item__link" href="https://github.com/ahonn">
-              Ahonn
-            </a>
-          </span>
-        </div>
-      </div>
-      <div className="extra">
-        {extra.map(({ title, items }) => (
-          <div className="block" key={title}>
-            <span className="block-title">{title}</span>
-            <ul className="block-items">
-              {items.map(({ name, link }) => (
-                <li className="block-item" key={link}>
-                  <a className="block-item__link" href={link}>
-                    {name}
+      <Container>
+        <Row>
+          <Col lg={12}>
+            <div className="copyright">
+              <ul className="menu">
+                {menu.map(({ name, path }) => (
+                  <li className="menu-item" key={path}>
+                    <Link to={path} className="menu-item__link">
+                      {name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="copyright__text">
+                <span>
+                  Copyright &copy; {since} - {currentYear}
+                </span>
+                <span className="copyright__icon">
+                  <FaHeart />
+                </span>
+                <span>{author}</span>
+              </div>
+              <div className="power-by">
+                <span className="power-item">
+                  Power by
+                  <a className="power-item__link" href="https://www.gatsbyjs.org/">
+                    Gatsbyjs
                   </a>
-                </li>
+                </span>
+                <span className="power-item">
+                  Design by
+                  <a className="power-item__link" href="https://github.com/ahonn">
+                    Ahonn
+                  </a>
+                </span>
+              </div>
+            </div>
+            <div className="extra">
+              {extra.map(({ title, items }) => (
+                <div className="block" key={title}>
+                  <span className="block-title">{title}</span>
+                  <ul className="block-items">
+                    {items.map(({ name, link }) => (
+                      <li className="block-item" key={link}>
+                        <a className="block-item__link" href={link}>
+                          {name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </footer>
   );
 };

@@ -68,7 +68,7 @@ const Post = (props: IPostDetailProps) => {
         <div className="post-footer">
           <div className="post-tags">
             {tags.map((name) => (
-              <span className="post-tag">
+              <span className="post-tag" key={name}>
                 <span className="post-tag__icon">
                   <FaHashtag />
                 </span>

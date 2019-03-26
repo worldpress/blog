@@ -52,6 +52,10 @@
       font-size: 16px;
       position: relative;
 
+      &.search {
+        padding: 23px 0;
+      }
+
       &.active {
         &::after {
           content: '';
@@ -76,6 +80,13 @@
         &:hover {
           color: #dc001c;
         }
+      }
+
+      &__icon {
+        position: relative;
+        top: -2px;
+        font-size: 14px;
+        vertical-align: middle;
       }
     }
   }

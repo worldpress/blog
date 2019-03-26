@@ -2,7 +2,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { navigate, Link } from 'gatsby';
 import { Container } from 'react-bootstrap';
-import { FaCode } from 'react-icons/fa';
+import { FaCode, FaSearch } from 'react-icons/fa';
 
 import useWindowScroll from '../../hooks/useWindowScroll';
 import { getDocumentScrollTop } from '../../utils/helpers';
@@ -65,6 +65,11 @@ const Header = (props: IHeaderComponentProps) => {
                 </li>
               );
             })}
+            <li className="menu-item search">
+              <Link to="/search" className="menu-item__link">
+                <FaSearch className="menu-item__icon" />
+              </Link>
+            </li>
           </ul>
         </nav>
       </Container>

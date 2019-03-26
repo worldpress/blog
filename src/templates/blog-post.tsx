@@ -22,7 +22,7 @@ const PostPageTemplate = (props: IPostPageProps) => {
     <Layout location={location}>
       <Container>
         <Row className="justify-content-md-center">
-          <Col lg={8}>
+          <Col lg={10}>
             <Post post={data.markdownRemark} />
           </Col>
         </Row>

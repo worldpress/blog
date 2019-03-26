@@ -1,5 +1,4 @@
 import _ from 'lodash/fp';
-import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 
 // formatPostDate :: string -> string

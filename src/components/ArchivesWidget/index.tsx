@@ -1,20 +1,34 @@
 import * as React from 'react';
 import _ from 'lodash/fp';
 import format from 'date-fns/format';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery } from 'gatsby';
 import { FaCaretRight } from 'react-icons/fa';
 
 import './index.scss';
-import { groupByDateFromPost } from '../../utils/helpers';
+import { groupByDateFromPost, getMarkdownRemarkEdgeNode } from '../../utils/helpers';
 
 interface IArchivesWidgetProps {
   size: number;
-  posts: IMarkdownRemarkNode[];
 }
 
 const ArchivesWidget = (props: IArchivesWidgetProps) => {
-  const { size, posts } = props;
-  const archiveGroup = groupByDateFromPost(posts);
+  const { size } = props;
+
+  const data = useStaticQuery(graphql`
+    query GetAllBlogArchives {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              date
+              title
+            }
+          }
+        }
+      }
+    }
+  `);
+  const archiveGroup = groupByDateFromPost(getMarkdownRemarkEdgeNode(data));
 
   return (
     <div className="widget archives">
@@ -26,7 +40,7 @@ const ArchivesWidget = (props: IArchivesWidgetProps) => {
           <div className="archive-item" key={date}>
             <Link
               className="archive-item__link"
-              to={`/arvhive/${date}`}
+              to={`/search?keyword=@date: ${date}`}
             >
               <span className="archive-item__icon">
                 <FaCaretRight />
@@ -48,7 +62,7 @@ const ArchivesWidget = (props: IArchivesWidgetProps) => {
 };
 
 ArchivesWidget.defaultProps = {
-  size: 6,
+  size: 12,
   posts: [],
 };
 

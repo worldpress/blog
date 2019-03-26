@@ -37,7 +37,7 @@ const TagsWidget = (props: ITagsWidgetProps) => {
           <div className="tag-item" key={name}>
             <Link
               className="tag-item__link"
-              to={`/tag/${name}`}
+              to={`/search?keyword=@tag: ${name}`}
             >
               <span className="tag-item__text">
                 {name}
