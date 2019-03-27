@@ -17,12 +17,13 @@ module.exports = {
     menu: [
       // { name: '首页', path: '/' },
       // { name: '关于我', path: '/about' },
-      { name: 'Wiki', path: '//wiki.ahonn.me' },
+      { name: '', path: '/' },
     ],
     socials: [
-      { name: 'zhihu', link: 'https://www.zhihu.com/people/ahonn/activities' },
-      { name: 'twitter', link: 'https://twitter.com/ahonnjiang' },
-      { name: 'github', link: 'https://github.com/ahonn' },
+      { name: 'Github', link: 'https://github.com/ahonn' },
+      { name: 'Twitter', link: 'https://twitter.com/ahonnjiang' },
+      { name: 'Zhihu', link: 'https://www.zhihu.com/people/ahonn/activities' },
+      { name: 'Wiki', link: 'https//wiki.ahonn.me' },
     ],
     friends: [
       { name: 'yzzting', link: 'http://yzz1995.cn/' },
