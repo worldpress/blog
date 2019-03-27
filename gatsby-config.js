@@ -14,8 +14,9 @@ module.exports = {
     author: 'Richard Jiang',
     since: 2015,
     menu: [
-      { name: '首页', path: '/' },
-      { name: '关于我', path: '/about' },
+      // { name: '首页', path: '/' },
+      // { name: '关于我', path: '/about' },
+      { name: 'Wiki', path: '//wiki.ahonn.me' },
     ],
     socials: [
       { name: 'zhihu', link: 'https://www.zhihu.com/people/ahonn/activities' },
