@@ -41,9 +41,11 @@ const IndexPageTemplate = (props: IIndexPageProps) => {
             <Pagination page={page} size={limit} total={total} />
           </Col>
           <Col lg={4}>
-            <RecentWidget posts={posts} />
-            <TagsWidget posts={posts} />
-            <ArchivesWidget posts={posts} />
+            <div className="widgets">
+              <RecentWidget posts={posts} />
+              <TagsWidget posts={posts} />
+              <ArchivesWidget posts={posts} />
+            </div>
           </Col>
         </Row>
       </Container>

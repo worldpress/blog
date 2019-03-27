@@ -1,6 +1,6 @@
 .container {
-  padding: 0 50px;
   overflow: auto;
+  padding: 0 50px;
 }
 
 .posts {
@@ -28,5 +28,15 @@
 
   .widget-content {
     overflow: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .widgets {
+    display: none;
   }
 }
