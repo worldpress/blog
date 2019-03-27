@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { navigate, Link } from 'gatsby';
 import { Container } from 'react-bootstrap';
 import { FaCode, FaSearch } from 'react-icons/fa';
+import _ from 'lodash/fp';
 
 import useWindowScroll from '../../hooks/useWindowScroll';
 import { getDocumentScrollTop } from '../../utils/helpers';
@@ -59,9 +60,11 @@ const Header = (props: IHeaderComponentProps) => {
               });
               return (
                 <li className={itemClasss} key={path}>
-                  <Link to={path} className="menu-item__link">
-                    {name}
-                  </Link>
+                  {_.startsWith('//', path) ? (
+                    <a href={path} className="menu-item__link" target="__blank">{name}</a>
+                  ) : (
+                    <Link to={path} className="menu-item__link">{name}</Link>
+                  )}
                 </li>
               );
             })}
