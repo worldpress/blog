@@ -13,8 +13,6 @@ const useQueryParam = (location: Location, key: string) => {
       ...queryString.parse(location.search),
       [key]: param,
     });
-    console.log(location);
-    console.log(newParams);
     if (_.isEmpty(newParams)) {
       replace(pathname);
     } else {
