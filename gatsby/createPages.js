@@ -55,11 +55,20 @@ function createPostPages(actions, result) {
     if (fileAbsolutePath !== null) {
       const [, fileName] = fileAbsolutePath.match(/([^\\/]+)\.md$/);
       console.log(`createRedirect: /${date}/${fileName}`);
+
+      const redirectUrl = `/${date}/${fileName}`;
+      createPage({
+        path: redirectUrl,
+        component: path.resolve('src/templates/blog-post.tsx'),
+        context: {
+          id,
+        },
+      });
       createRedirect({
-        fromPath: `/${date}/${fileName}`,
+        fromPath: redirectUrl,
         toPath: postPath,
         isPermanent: true,
-        redirectInBrowser: false,
+        redirectInBrowser: true,
       });
     }
   });
