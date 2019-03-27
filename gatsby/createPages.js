@@ -54,12 +54,12 @@ function createPostPages(actions, result) {
     // hexo post redirect
     if (fileAbsolutePath !== null) {
       const [, fileName] = fileAbsolutePath.match(/([^\\/]+)\.md$/);
-      console.log(`/${date}/${fileName}`);
+      console.log(`createRedirect: /${date}/${fileName}`);
       createRedirect({
         fromPath: `/${date}/${fileName}`,
         toPath: postPath,
         isPermanent: true,
-        redirectInBrowser: true,
+        redirectInBrowser: false,
       });
     }
   });
