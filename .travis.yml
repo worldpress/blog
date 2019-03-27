@@ -6,11 +6,12 @@ branches:
     - master
 
 before_install:
-  - git clone -b master --depth 1 https://github.com/ahonn/blog.git blog
+  - git clone --depth 1 https://github.com/ahonn/blog.git blog
   - cd blog
 
 install:
-  - npm install
+  - npm install yarn -g
+  - yarn install
 
 after_success:
   - git config --global user.name "ahonn"
