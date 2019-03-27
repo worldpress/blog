@@ -33,6 +33,13 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-source-github-issue',
+      options: {
+        owner: 'ahonn',
+        repo: 'blog',
+      },
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require('sass'),
@@ -43,13 +50,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/posts`,
         name: 'markdown-posts',
-      },
-    },
-    {
-      resolve: 'gatsby-source-github-issue',
-      options: {
-        owner: 'creeperyang',
-        repo: 'blog',
       },
     },
     {

@@ -8,8 +8,9 @@
   ],
   "license": "MIT",
   "scripts": {
+    "dev": "gatsby develop",
     "build": "gatsby build",
-    "dev": "gatsby develop"
+    "publish": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -51,6 +52,7 @@
     "gatsby-source-github-issue": "^1.0.0",
     "gatsby-transformer-remark": "^2.2.6",
     "gatsby-transformer-sharp": "^2.1.17",
+    "gh-pages": "^2.0.1",
     "sass": "^1.17.2",
     "source-map-support": "^0.5.10",
     "ts-node": "^8.0.3"
