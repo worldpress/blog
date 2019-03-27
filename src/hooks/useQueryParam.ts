@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react';
-import { createBrowserHistory } from 'history';
+import { replace } from 'gatsby';
 import queryString from 'query-string';
 import _ from 'lodash/fp';
 
-const useQueryParam = (key: string) => {
-  const history = createBrowserHistory();
-  const params = queryString.parse(history.location.search);
+const useQueryParam = (location: Location, key: string) => {
+  const { pathname, search } = location;
+  const params = queryString.parse(search);
   const [param, setParam] = useState(params[key]);
 
   useEffect(() => {
-    const newParams = {
-      ...queryString.parse(history.location.search),
+    const newParams = _.pickBy(_.identity, {
+      ...queryString.parse(location.search),
       [key]: param,
-    };
-    history.replace('?' + queryString.stringify(newParams));
-  }, [key, param]);
+    });
+    console.log(location);
+    console.log(newParams);
+    if (_.isEmpty(newParams)) {
+      replace(pathname);
+    } else {
+      replace(`${pathname}?` + queryString.stringify(newParams));
+    }
+  }, [pathname, key, param]);
 
   return [param, setParam];
 };

@@ -26,7 +26,7 @@ const SearchPage = (props: ISearchPageProps) => {
   const { location, data } = props;
   const posts = getMarkdownRemarkEdgeNode(data);
 
-  const [keyword = '', setKeyword] = useQueryParam('keyword');
+  const [keyword = '', setKeyword] = useQueryParam(location, 'keyword');
   const result = useSearchResult(posts, keyword as string);
 
   return (

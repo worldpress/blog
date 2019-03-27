@@ -1,7 +1,7 @@
 import * as React from 'react';
 import _ from 'lodash/fp';
 import format from 'date-fns/format';
-import { Link, useStaticQuery } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FaCaretRight } from 'react-icons/fa';
 
 import './index.scss';
