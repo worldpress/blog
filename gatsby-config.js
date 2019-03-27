@@ -9,6 +9,7 @@ require('ts-node').register({
 })
 
 module.exports = {
+  pathPrefix: '/',
   siteMetadata: {
     title: `Ahonn's Blog`,
     author: 'Richard Jiang',
