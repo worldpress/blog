@@ -54,6 +54,16 @@ const Header = (props: IHeaderComponentProps) => {
         <nav className="nav">
           <ul className="menu">
             {menu.map(({ name, path }) => {
+              if (path === '/search') {
+                return (
+                  <li className="menu-item search">
+                    <Link to="/search" className="menu-item__link">
+                      <FaSearch className="menu-item__icon" />
+                    </Link>
+                  </li>
+                );
+              }
+
               const itemClasss = classnames({
                 'menu-item': true,
                 'active': path === pathname,
@@ -68,11 +78,6 @@ const Header = (props: IHeaderComponentProps) => {
                 </li>
               );
             })}
-            <li className="menu-item search">
-              <Link to="/search" className="menu-item__link">
-                <FaSearch className="menu-item__icon" />
-              </Link>
-            </li>
           </ul>
         </nav>
       </Container>

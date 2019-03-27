@@ -17,7 +17,7 @@ module.exports = {
     menu: [
       // { name: '首页', path: '/' },
       // { name: '关于我', path: '/about' },
-      { name: '', path: '/' },
+      { name: '搜索', path: '/search' },
     ],
     socials: [
       { name: 'Github', link: 'https://github.com/ahonn' },
