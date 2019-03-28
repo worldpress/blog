@@ -1,12 +1,12 @@
 'use strict';
 
-require('source-map-support').install()
+require('source-map-support').install();
 require('ts-node').register({
   compilerOptions: {
     module: 'commonjs',
     target: 'es2017',
   },
-})
+});
 
 module.exports = {
   pathPrefix: '/',
@@ -63,6 +63,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-74273646-1`,
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -79,7 +85,7 @@ module.exports = {
             options: {
               maintainCase: true,
               removeAccents: true,
-            }
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,

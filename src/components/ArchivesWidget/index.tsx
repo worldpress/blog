@@ -4,8 +4,9 @@ import format from 'date-fns/format';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FaCaretRight } from 'react-icons/fa';
 
-import './index.scss';
 import { groupByDateFromPost, getMarkdownRemarkEdgeNode } from '../../utils/helpers';
+import { DATE_SYMBOL } from '../../consts';
+import './index.scss';
 
 interface IArchivesWidgetProps {
   size: number;
@@ -40,7 +41,7 @@ const ArchivesWidget = (props: IArchivesWidgetProps) => {
           <div className="archive-item" key={date}>
             <Link
               className="archive-item__link"
-              to={`/search?keyword=@date: ${date}`}
+              to={`/search?keyword=${DATE_SYMBOL} ${date}`}
             >
               <span className="archive-item__icon">
                 <FaCaretRight />

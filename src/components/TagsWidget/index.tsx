@@ -2,8 +2,9 @@ import * as React from 'react';
 import _ from 'lodash/fp';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import './index.scss';
 import { collectTagNamesFromPost, getMarkdownRemarkEdgeNode } from '../../utils/helpers';
+import { TAG_SYMBOL } from '../../consts';
+import './index.scss';
 
 interface ITagsWidgetProps {
   size: number;
@@ -37,7 +38,7 @@ const TagsWidget = (props: ITagsWidgetProps) => {
           <div className="tag-item" key={name}>
             <Link
               className="tag-item__link"
-              to={`/search?keyword=@tag: ${name}`}
+              to={`/search?keyword=${TAG_SYMBOL} ${name}`}
             >
               <span className="tag-item__text">
                 {name}

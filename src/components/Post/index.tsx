@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { FaCalendarAlt, FaClock, FaHashtag } from 'react-icons/fa';
 
 import { getPostLink, formatPostDate, formatReadingTime } from '../../utils/helpers';
+import { TAG_SYMBOL } from '../../consts';
 import './index.scss';
 
 interface IPostDetailProps {
@@ -72,7 +73,7 @@ const Post = (props: IPostDetailProps) => {
                 <span className="post-tag__icon">
                   <FaHashtag />
                 </span>
-                <Link className="post-tag__link" to={`/tag/${name}`}>
+                <Link className="post-tag__link" to={`/search?keyword=${TAG_SYMBOL} ${name}`}>
                   {name}
                 </Link>
               </span>
