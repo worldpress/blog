@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import Post from '../components/Post';
 import Pagination from '../components/Pagination';
 import RecentWidget from '../components/RecentWidget';
@@ -30,6 +31,7 @@ const IndexPageTemplate = (props: IIndexPageProps) => {
 
   return (
     <Layout location={location}>
+      <SEO />
       <Container>
         <Row>
           <Col lg={8}>

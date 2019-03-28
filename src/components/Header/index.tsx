@@ -2,12 +2,13 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { navigate, Link } from 'gatsby';
 import { Container } from 'react-bootstrap';
-import { FaCode, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import _ from 'lodash/fp';
 
 import useWindowScroll from '../../hooks/useWindowScroll';
 import { getDocumentScrollTop } from '../../utils/helpers';
 
+import iconPng from '../../assets/icon.png';
 import './index.scss';
 
 interface IHeaderComponentProps {
@@ -45,9 +46,7 @@ const Header = (props: IHeaderComponentProps) => {
       <Container>
         <div className="title">
           <h1 className="title__link" onClick={() => navigate('/')}>
-            <span className="title__icon">
-              <FaCode />
-            </span>
+            <img className="title__icon" src={iconPng} />
             {title}
           </h1>
         </div>
@@ -56,7 +55,7 @@ const Header = (props: IHeaderComponentProps) => {
             {menu.map(({ name, path }) => {
               if (path === '/search') {
                 return (
-                  <li className="menu-item search">
+                  <li key={path} className="menu-item search">
                     <Link to="/search" className="menu-item__link">
                       <FaSearch className="menu-item__icon" />
                     </Link>

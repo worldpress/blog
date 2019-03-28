@@ -12,10 +12,11 @@ module.exports = {
   pathPrefix: '/',
   siteMetadata: {
     title: `Ahonn's Blog`,
-    author: 'Richard Jiang',
-    description: 'Personal blog by Ahonn Jiang.',
+    author: 'Ahonn',
+    description: 'Personal blog by Ahonn.',
     siteUrl: 'https://www.ahonn.me',
     since: 2015,
+    twitter: '@ahonnjiang',
     menu: [
       // { name: '首页', path: '/' },
       // { name: '关于我', path: '/about' },
@@ -45,6 +46,19 @@ module.exports = {
       options: {
         path: `${__dirname}/content/posts`,
         name: 'markdown-posts',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Ahonn's Blog`,
+        short_name: `Ahonn's Blog`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#dc001c`,
+        display: `minimal-ui`,
+        icon: `src/assets/icon.png`,
+        theme_color_in_head: false,
       },
     },
     {
@@ -79,7 +93,6 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
@@ -92,6 +105,8 @@ module.exports = {
         implementation: require('sass'),
       },
     },
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',

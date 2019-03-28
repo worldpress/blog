@@ -1,6 +1,12 @@
 import _ from 'lodash/fp';
 import format from 'date-fns/format';
 
+// getPostLink :: IMarkdownRemarkNode -> string
+export const getPostLink = (post: IMarkdownRemarkNode) => {
+  const { frontmatter: { date, title } } = post;
+  return `/${date}/${title}/`;
+};
+
 // formatPostDate :: string -> string
 export const formatPostDate = (date: string) => {
   return format(date, 'YYYY年MM月DD日');

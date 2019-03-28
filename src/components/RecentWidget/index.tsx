@@ -2,7 +2,7 @@ import * as React from 'react';
 import format from 'date-fns/format';
 import { Link } from 'gatsby';
 
-import { formatPostDate } from '../../utils/helpers';
+import { getPostLink, formatPostDate } from '../../utils/helpers';
 import './index.scss';
 
 interface IRecentWidgetProps {
@@ -21,7 +21,7 @@ const RecentWidget = (props: IRecentWidgetProps) => {
       <div className="widget-content">
         {posts.slice(0, size).map((post) => {
           const { id, frontmatter: { date, title } } = post;
-          const postLink = `/${date}/${title}/`;
+          const postLink = getPostLink(post);
 
           return (
             <div className="recent-item" key={id}>

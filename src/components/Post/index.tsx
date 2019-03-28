@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { FaCalendarAlt, FaClock, FaHashtag } from 'react-icons/fa';
 
-import { formatPostDate, formatReadingTime } from '../../utils/helpers';
+import { getPostLink, formatPostDate, formatReadingTime } from '../../utils/helpers';
 import './index.scss';
 
 interface IPostDetailProps {
@@ -14,7 +14,7 @@ interface IPostDetailProps {
 const Post = (props: IPostDetailProps) => {
   const { post, excerpt } = props;
   const { frontmatter: { title, date, tags }, html, excerpt: exp, timeToRead } = post;
-  const postLink = `/${date}/${title}/`;
+  const postLink = getPostLink(post);
 
   const clazz = classnames({
     post: true,
