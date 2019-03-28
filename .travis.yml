@@ -6,7 +6,7 @@ branches:
     - master
 
 before_install:
-  - git clone --depth 1 https://github.com/ahonn/blog.git blog
+  - git clone --depth 1 https://github.com/ahonn/blog.git
   - cd blog
 
 install:
@@ -17,4 +17,4 @@ after_success:
   - git config --global user.name "ahonn"
   - git config --global user.email "ahonn95@outlook.com"
   - sed -i "s/<token>/${GH_TOKEN}/g" ./_config.yml
-  - yarn run publish
+  - yarn run deploy
