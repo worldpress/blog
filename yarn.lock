@@ -4160,6 +4160,13 @@ gatsby-link@^2.0.16:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
+gatsby-plugin-catch-links@^2.0.13:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.0.13.tgz#b49bb1e2383881cffca86a428348a7afdb6c3dd4"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    escape-string-regexp "^1.0.5"
+
 gatsby-plugin-page-creator@^2.0.12:
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.0.12.tgz#00a5103715881e141c81b68b670ad8fb06291b7d"
@@ -4232,6 +4239,19 @@ gatsby-remark-autolink-headers@^2.0.16:
     github-slugger "^1.1.1"
     lodash "^4.17.11"
     mdast-util-to-string "^1.0.2"
+    unist-util-visit "^1.3.0"
+
+gatsby-remark-copy-linked-files@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-2.0.11.tgz#00ddb1af5e90a24ed4161a23aa578a9e9be4a2c5"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    cheerio "^1.0.0-rc.2"
+    fs-extra "^4.0.1"
+    is-relative-url "^2.0.0"
+    lodash "^4.17.10"
+    path-is-inside "^1.0.2"
+    probe-image-size "^4.0.0"
     unist-util-visit "^1.3.0"
 
 gatsby-remark-external-links@^0.0.4:
@@ -9824,7 +9844,6 @@ typedarray@^0.0.6:
 typescript@^3.3.4000:
   version "3.3.4000"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.4000.tgz#76b0f89cfdbf97827e1112d64f283f1151d6adf0"
-  integrity sha512-jjOcCZvpkl2+z7JFn0yBOoLQyLoIkNZAs/fYJkUG6VKy6zLPHJGfQJYFHzibB6GJaF/8QrcECtlQ5cpvRHSMEA==
 
 typography-breakpoint-constants@^0.16.19:
   version "0.16.19"

@@ -13,6 +13,8 @@ module.exports = {
   siteMetadata: {
     title: `Ahonn's Blog`,
     author: 'Richard Jiang',
+    description: 'Personal blog by Ahonn Jiang.',
+    siteUrl: 'https://www.ahonn.me',
     since: 2015,
     menu: [
       // { name: '首页', path: '/' },
@@ -31,20 +33,11 @@ module.exports = {
     ],
   },
   plugins: [
-    'gatsby-plugin-typescript',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-github-issue',
       options: {
         owner: 'ahonn',
         repo: 'blog',
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        implementation: require('sass'),
       },
     },
     {
@@ -59,6 +52,7 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-responsive-iframe',
+          'gatsby-remark-copy-linked-files',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -85,11 +79,21 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require('sass'),
+      },
+    },
+    'gatsby-plugin-typescript',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
   ],
 };
