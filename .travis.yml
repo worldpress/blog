@@ -8,9 +8,9 @@ branches:
 before_install:
   - git clone --depth 1 https://github.com/ahonn/blog.git
   - cd blog
+  - npm install --global yarn
 
 install:
-  - npm install yarn -g
   - yarn install
 
 after_success:
