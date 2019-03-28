@@ -1,7 +1,15 @@
 .layout {
   .content {
     min-height: calc(100vh - 273px);
-    margin-top: 73px;
+    margin-top: 70px;
     padding-top:  20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .layout {
+    .content {
+      padding-top: 0;
+    }
   }
 }

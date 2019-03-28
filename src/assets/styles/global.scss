@@ -1,11 +1,11 @@
 .container {
   overflow: auto;
   padding: 0 50px;
-}
 
-.posts {
-  max-width: 650px;
-  padding-top: 20px;
+  .posts {
+    max-width: 650px;
+    padding-top: 15px;
+  }
 }
 
 .widget {

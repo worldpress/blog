@@ -1,6 +1,7 @@
 .header {
   position: fixed;
   top: 0;
+  height: 70px;
   width: 100%;
   opacity: 1;
   z-index: 9999;
@@ -8,6 +9,7 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
   transition: opacity ease-out .3s;
+  overflow: hidden;
 
   &.hide {
     opacity: 0;
@@ -55,6 +57,7 @@
 
       &.search {
         padding: 23px 0;
+        margin-right: 10px;
       }
 
       &.active {
@@ -92,3 +95,4 @@
     }
   }
 }
+

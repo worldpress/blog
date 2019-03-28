@@ -61,7 +61,7 @@ function createPostPages(actions, result) {
         fromPath: redirectUrl,
         toPath: postPath,
         isPermanent: true,
-        redirectInBrowser: true,
+        redirectInBrowser: false,
       });
     }
   });
