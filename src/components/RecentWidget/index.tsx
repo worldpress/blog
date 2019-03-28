@@ -21,7 +21,7 @@ const RecentWidget = (props: IRecentWidgetProps) => {
       <div className="widget-content">
         {posts.slice(0, size).map((post) => {
           const { id, frontmatter: { date, title } } = post;
-          const postLink = `/${date}/${title}`;
+          const postLink = `/${date}/${title}/`;
 
           return (
             <div className="recent-item" key={id}>

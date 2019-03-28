@@ -14,7 +14,7 @@ interface IPostDetailProps {
 const Post = (props: IPostDetailProps) => {
   const { post, excerpt } = props;
   const { frontmatter: { title, date, tags }, html, excerpt: exp, timeToRead } = post;
-  const postLink = `/${date}/${title}`;
+  const postLink = `/${date}/${title}/`;
 
   const clazz = classnames({
     post: true,

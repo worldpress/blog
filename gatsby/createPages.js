@@ -41,7 +41,7 @@ function createPostPages(actions, result) {
     const { id, frontmatter, fileAbsolutePath } = node;
     const { title, date } = frontmatter;
 
-    const postPath = `/${date}/${title}`;
+    const postPath = `/${date}/${title}/`;
 
     createPage({
       path: postPath,
@@ -54,16 +54,9 @@ function createPostPages(actions, result) {
     // hexo post redirect
     if (fileAbsolutePath !== null) {
       const [, fileName] = fileAbsolutePath.match(/([^\\/]+)\.md$/);
-      console.log(`createRedirect: /${date}/${fileName}`);
+      const redirectUrl = `/${date}/${fileName}/`;
 
-      const redirectUrl = `/${date}/${fileName}`;
-      createPage({
-        path: redirectUrl,
-        component: path.resolve('src/templates/blog-post.tsx'),
-        context: {
-          id,
-        },
-      });
+      console.log(`createRedirect: ${redirectUrl}`);
       createRedirect({
         fromPath: redirectUrl,
         toPath: postPath,
