@@ -5,6 +5,7 @@ import { graphql, navigate } from 'gatsby';
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import Post from '../components/Post';
+import Comment from '../components/Comment';
 
 import { getPostLink } from '../utils/helpers';
 
@@ -26,11 +27,12 @@ const PostPageTemplate = (props: IPostPageProps) => {
 
   const post = data.markdownRemark;
   const postLink = getPostLink(post);
+  const postCommentId = post.frontmatter.commentId;
 
   // Used for redirect the old hexo blog posts.
   // Because when I use gatsby createRedirect in gatsby-node.js.
   // In the production environment will rendered 404 page before redirect.
-  let meta = [];
+  const meta = [];
   if (redirect) {
     meta.push({
       'http-equiv': 'refresh',
@@ -50,6 +52,7 @@ const PostPageTemplate = (props: IPostPageProps) => {
         <Row className="justify-content-md-center">
           <Col lg={10}>
             <Post post={data.markdownRemark} />
+            <Comment id={postCommentId} />
           </Col>
         </Row>
       </Container>
@@ -65,6 +68,7 @@ export const query = graphql`
         title
         date(formatString: "YYYY/MM/DD")
         tags
+        commentId
       }
       excerpt(truncate: true)
       html

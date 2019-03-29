@@ -33,6 +33,7 @@ declare interface IMarkdownRemarkNode {
     title: string;
     date: string;
     tags: string[];
+    commentId: number;
   };
   excerpt: string;
   html: string;
