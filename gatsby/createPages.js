@@ -21,7 +21,7 @@ function createIndexPages(actions, result) {
         skip: (page - 1) * PAGE_SIZE,
         limit: PAGE_SIZE,
         total,
-      }
+      },
     });
   }
 
@@ -41,7 +41,8 @@ function createPostPages(actions, result) {
     const { id, frontmatter, fileAbsolutePath } = node;
     const { title, date } = frontmatter;
 
-    const postPath = `/${date}/${title}/`;
+    const slug = title.replace(/[^A-Za-z0-9\u4e00-\u9fa5]/g, '');
+    const postPath = `/${date}/${slug}/`;
 
     console.log(`createPage: ${postPath}`);
     createPage({
@@ -74,9 +75,7 @@ function createPostPages(actions, result) {
 module.exports = ({ actions, graphql }) => {
   return graphql(`
     {
-      allMarkdownRemark(
-        sort: { fields: frontmatter___date, order: DESC }
-      ) {
+      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             id
@@ -90,7 +89,7 @@ module.exports = ({ actions, graphql }) => {
         }
       }
     }
-  `).then((result) => {
+  `).then(result => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()));
       return Promise.reject(result.errors);
@@ -98,5 +97,4 @@ module.exports = ({ actions, graphql }) => {
     createIndexPages(actions, result);
     createPostPages(actions, result);
   });
-
 };
