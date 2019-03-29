@@ -8,9 +8,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop",
-    "build": "gatsby build",
     "test": "echo 'no test'",
+    "dev": "gatsby develop",
+    "build": "./scripts/build.sh",
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
