@@ -723,7 +723,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.3.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
   version "7.4.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.2.tgz#f5ab6897320f16decd855eed70b705908a313fe8"
   integrity sha512-7Bl2rALb7HpvXFL7TETNzKSAeBVCPHELzc0C//9FCxN8nsiueWSJBqaF+2oIJScyILStASR/Cx5WMkXGYTiJFA==
@@ -830,16 +830,6 @@
     prop-types "^15.6.1"
     typed-styles "^0.0.5"
     warning "^3.0.0"
-
-"@restart/context@^2.1.2":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@restart/context/-/context-2.1.3.tgz#727c6a34f077719e256deefa6814df47f2f7df71"
-  integrity sha512-t9WbUp5pViyp3jY4v+tTa3v8nESUv5pvSP/yXe47LCMAX93ySoOFiRrJ8FGEVCa4ZohLp8q2oYiLnH5W/CUADA==
-
-"@restart/hooks@^0.1.1":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@restart/hooks/-/hooks-0.1.6.tgz#5417f9f239b19c8427ee6f034940984bd6b4084e"
-  integrity sha512-eP1NykkdPlagH60YV+k2qGDCq3rkNtY6Sz0T2DVU1MQPa4pVRofIj+leFM2SLZLzy5nQFga4YnX7oM2d2LJRpA==
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -8805,7 +8795,7 @@ pnp-webpack-plugin@^1.4.1:
   dependencies:
     ts-pnp "^1.0.0"
 
-popper.js@^1.14.4, popper.js@^1.14.7:
+popper.js@^1.14.4, popper.js@^1.14.6:
   version "1.14.7"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.7.tgz#e31ec06cfac6a97a53280c3e55e4e0c860e7738e"
   integrity sha512-4q1hNvoUre/8srWsH7hnoSJ5xVmIL4qgz+s4qf2TnJIMyZFUFMGH+9vE7mXynAlHSZ/NdTmmow86muD0myUkVQ==
@@ -9333,7 +9323,7 @@ prop-types-extra@^1.1.0:
     react-is "^16.3.2"
     warning "^3.0.0"
 
-prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9534,25 +9524,25 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     strip-json-comments "~2.0.1"
 
 react-bootstrap@^1.0.0-beta.5:
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.0.0-beta.6.tgz#b9b8b01a0fee668ebc2b6148b30fc57e3aa140dc"
-  integrity sha512-4RwXBCm45dHar1mMq7Wz8X9dI3b84R+Un696S+amgjePcxb6DqqqcxYla1FR7FJ+IIODr12HTjxu4LRVtIEsSQ==
+  version "1.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.0.0-beta.5.tgz#cf2c45a78bb0603c086d3fee3b454e21c3b5de6e"
+  integrity sha512-Osm0OtTbYwfsT1rpu88ESWuAHZxfaHFNKFiW8w3w+6YY9/bLEPHbGRZA6W21fg5yvcuKN9hJKT857TTHgY7SoQ==
   dependencies:
-    "@babel/runtime" "^7.3.4"
+    "@babel/runtime" "^7.2.0"
     "@react-bootstrap/react-popper" "1.2.1"
-    "@restart/context" "^2.1.2"
-    "@restart/hooks" "^0.1.1"
     classnames "^2.2.6"
     dom-helpers "^3.4.0"
     invariant "^2.2.3"
     keycode "^2.1.2"
-    popper.js "^1.14.7"
-    prop-types "^15.7.2"
+    popper.js "^1.14.6"
+    prop-types "^15.6.2"
     prop-types-extra "^1.1.0"
-    react-overlays "^1.2.0"
-    react-transition-group "^2.6.0"
-    uncontrollable "^6.1.0"
-    warning "^4.0.3"
+    react-context-toolbox "^2.0.2"
+    react-overlays "^1.0.0"
+    react-prop-types "^0.4.0"
+    react-transition-group "^2.5.1"
+    uncontrollable "^6.0.0"
+    warning "^4.0.1"
 
 react-context-toolbox@^2.0.2:
   version "2.0.2"
@@ -9643,7 +9633,7 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-overlays@^1.2.0:
+react-overlays@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-1.2.0.tgz#205368eeb0a5fb0b7f9b717fa7a12d518500abdb"
   integrity sha512-i/FCV8wR6aRaI+Kz/dpJhOdyx+ah2tN1RhT9InPrexyC4uzf3N4bNayFTGtUeQVacj57j1Mqh1CwV60/5153Iw==
@@ -9669,6 +9659,13 @@ react-popper@^1.3.2:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
+react-prop-types@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-prop-types/-/react-prop-types-0.4.0.tgz#f99b0bfb4006929c9af2051e7c1414a5c75b93d0"
+  integrity sha1-+ZsL+0AGkpya8gUefBQUpcdbk9A=
+  dependencies:
+    warning "^3.0.0"
+
 react-side-effect@^1.1.0:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.1.5.tgz#f26059e50ed9c626d91d661b9f3c8bb38cd0ff2d"
@@ -9677,7 +9674,7 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-transition-group@^2.6.0:
+react-transition-group@^2.5.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.7.1.tgz#1fe6d54e811e8f9dfd329aa836b39d9cd16587cb"
   integrity sha512-b0VJTzNRnXxRpCuxng6QJbAzmmrhBn1BZJfPPnHbH2PIo8msdkajqwtfdyGm/OypPXZNfAHKEqeN15wjMXrRJQ==
@@ -11644,7 +11641,7 @@ unc-path-regex@^0.1.2:
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
   integrity sha1-5z3T17DXxe2G+6xrCufYxqadUPo=
 
-uncontrollable@^6.0.0, uncontrollable@^6.1.0:
+uncontrollable@^6.0.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/uncontrollable/-/uncontrollable-6.1.0.tgz#45dcf54b76bf07e0ddf7c1a669caf935d2e101d5"
   integrity sha512-2TzEm0pLKauMBZfAZXsgQvLpZHEp95891frCZdGDrSG7dWYaIQhedwLAzi0X8pR8KHNqlmuYEb2cEgbQzr050A==
@@ -12080,7 +12077,7 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-warning@^4.0.2, warning@^4.0.3:
+warning@^4.0.1, warning@^4.0.2:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==

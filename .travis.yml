@@ -6,14 +6,21 @@ branches:
     - master
 
 before_install:
-  - git clone --depth 1 https://github.com/ahonn/blog.git
-  - cd blog
   - npm install --global yarn
-
-install:
   - yarn install
 
-after_success:
-  - git config --global user.name "ahonn"
-  - git config --global user.email "ahonn95@outlook.com"
-  - yarn run deploy
+script:
+  - yarn run build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  email: $GITHUB_EMAIL
+  name: $GITHUB_USERNAME
+  verbose: true
+  keep-history: true
+  local-dir: public
+  target_branch: gh-pages
+  on:
+    branch: master
