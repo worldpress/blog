@@ -112,6 +112,7 @@ module.exports = {
         implementation: require('sass'),
       },
     },
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',

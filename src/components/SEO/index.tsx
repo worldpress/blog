@@ -3,15 +3,10 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import _ from 'lodash/fp';
 
-interface ISEOMeta {
-  name: string;
-  content: string;
-}
-
 interface ISEOProps {
   lang: string;
   slug: string;
-  meta: ISEOMeta[];
+  meta: any[];
   title: string;
   description: string;
 }

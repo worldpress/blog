@@ -34,7 +34,7 @@ function createIndexPages(actions, result) {
 }
 
 function createPostPages(actions, result) {
-  const { createPage, createRedirect } = actions;
+  const { createPage } = actions;
 
   const posts = result.data.allMarkdownRemark.edges;
   posts.forEach(({ node }) => {
@@ -43,6 +43,7 @@ function createPostPages(actions, result) {
 
     const postPath = `/${date}/${title}/`;
 
+    console.log(`createPage: ${postPath}`);
     createPage({
       path: postPath,
       component: path.resolve('src/templates/blog-post.tsx'),
@@ -56,12 +57,15 @@ function createPostPages(actions, result) {
       const [, fileName] = fileAbsolutePath.match(/([^\\/]+)\.md$/);
       const redirectUrl = `/${date}/${fileName}/`;
 
-      console.log(`createRedirect: ${redirectUrl}`);
-      createRedirect({
-        fromPath: redirectUrl,
-        toPath: postPath,
-        isPermanent: true,
-        redirectInBrowser: false,
+      console.log(`createPage: ${redirectUrl}`);
+      createPage({
+        path: redirectUrl,
+        component: path.resolve('src/templates/blog-post.tsx'),
+        context: {
+          id,
+          redirect: true,
+          redirectUrl: postPath,
+        },
       });
     }
   });
