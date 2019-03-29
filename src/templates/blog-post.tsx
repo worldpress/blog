@@ -27,7 +27,7 @@ const PostPageTemplate = (props: IPostPageProps) => {
 
   const post = data.markdownRemark;
   const postLink = getPostLink(post);
-  const postCommentId = post.frontmatter.commentId;
+  const postCommentId = post.frontmatter.issueId;
 
   // Used for redirect the old hexo blog posts.
   // Because when I use gatsby createRedirect in gatsby-node.js.
@@ -68,7 +68,7 @@ export const query = graphql`
         title
         date(formatString: "YYYY/MM/DD")
         tags
-        commentId
+        issueId
       }
       excerpt(truncate: true)
       html
