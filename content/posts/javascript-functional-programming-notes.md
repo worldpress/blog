@@ -3,9 +3,8 @@ title: JavaScript 函数式编程笔记
 date: 2018-09-15 00:01:27
 tags:
   - JavaScript
-  - 函数式编程
-categories:
-  - 技术文章
+  - FP
+issueId: 47
 ---
 
 > 本文为 [JS 函数式编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/cotent/)  笔记

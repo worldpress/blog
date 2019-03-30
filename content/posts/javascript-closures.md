@@ -1,11 +1,10 @@
 ---
-title: 作用域与闭包
+title: JavaScript 作用域与闭包
 date: 2016-04-04 22:43:59
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 13
 ---
 
 ## 作用域

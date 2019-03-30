@@ -4,8 +4,7 @@ date: 2016-08-31 22:57:34
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 25
 ---
 
 > 翻译自：[JavaScript Best Practices: Tips & Tricks to Level Up Your Code](https://www.codementor.io/javascript/tutorial/javascript-best-practices)

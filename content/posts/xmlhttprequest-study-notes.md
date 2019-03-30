@@ -4,8 +4,7 @@ date: 2017-03-02 18:35:39
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 36
 ---
 
 > AJAX即“Asynchronous JavaScript and XML”（异步的JavaScript与XML技术），指的是一套综合了多项技术的浏览器端网页开发技术。

@@ -3,8 +3,7 @@ title: 转投 Neovim
 date: 2017-03-27 11:10:06
 tags:
   - Vim
-categories:
-  - 折腾工具
+issueId: 39
 ---
 
 很久之前就听说过 Neovim，但一直没有怎么了解过。昨天下午折腾了一下，彻底转投 Neovim 了。

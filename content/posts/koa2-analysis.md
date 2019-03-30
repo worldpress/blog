@@ -4,8 +4,7 @@ date: 2017-05-17
 tags:
   - Koa
   - Node.js
-categories:
-  - 思考总结
+issueId: 40
 ---
 
 ## 源码结构

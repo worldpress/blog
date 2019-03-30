@@ -3,8 +3,7 @@ title: Vim 全局搜索插件：ctrlsf.vim
 date: 2017-06-29 18:05:46
 tags:
   - Vim
-categories:
-  - 折腾工具
+issueId: 42
 ---
 
 这两天一直在看文档看源码，Vim 上用的 Ack.vim 做全局搜索，但是用起来蛮难用的。

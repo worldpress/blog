@@ -3,9 +3,9 @@ title: Python 多线程初步了解
 date: 2016-02-20 20:56:39
 tags:
   - Python
-categories:
-  - 技术文章
+issueId: 9
 ---
+
 这两天在写 [Nada](https://www.github.com/ahonn/Nada) 的下载功能，遇到一个问题，在下载歌曲的时候整个界面都会卡住，必须等待下载完成才能够恢复，因为写的时候是直接顺序执行的，没有多线程。之前在写播放功能的时候是参考了别人的代码，自己其实对多线程部分不是很了解。然后趁着晚上了解一下 Python 的 thread 和 treading 模块。
 
 ## Python 多线程支持

@@ -4,8 +4,7 @@ date: 2016-06-29 23:14:02
 tags:
   - CSS
   - 前端
-categories:
-  - 思考总结
+issueId: 21
 ---
 
 我们有这样一个结构的 HTML：

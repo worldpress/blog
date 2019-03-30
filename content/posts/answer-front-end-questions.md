@@ -4,8 +4,7 @@ date: 2017-03-11 17:13:46
 tags:
   - 前端
   - 面试
-categories:
-  - 思考总结
+issueId: 37
 ---
 
 > 答 [中级前端工程师面试 我想问的几个问题](https://zhuanlan.zhihu.com/p/25701897) 中的几个问题，感谢 [@SimplyY

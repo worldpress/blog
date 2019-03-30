@@ -2,10 +2,8 @@
 title: 使用 Nokogiri 解析 HTML
 date: 2016-05-28 22:26:29
 tags:
-  - Nokogiri
   - Ruby
-categories:
-  - 技术文章
+issueId: 19
 ---
 
 Nokogiri 是 Ruby 的一个 HTML/XML 文件的解析库。在需要解析 HTML/XML 文件获取数据时，它是一个很好的选择。

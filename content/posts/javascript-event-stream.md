@@ -4,8 +4,7 @@ date: 2016-04-16 11:29:49
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 14
 ---
 
 ## 事件流

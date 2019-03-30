@@ -5,8 +5,7 @@ tags:
   - JavaScript
   - 前端
   - React
-categories:
-  - 技术文章
+issueId: 27
 ---
 
 生命周期函数是指，在组件生命周期上的特定点上执行的各个函数。

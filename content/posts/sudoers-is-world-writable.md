@@ -3,8 +3,7 @@ title: sudoers is world writable
 date: 2015-08-30 12:00:00
 tags:
   - Linux
-categories:
-  - 思考总结
+issueId: 1
 ---
 > 记录以避免再次犯错
 

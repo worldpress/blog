@@ -4,9 +4,9 @@ date: 2016-11-21 15:07:49
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 30
 ---
+
 最近开始读之前没有读完的 underscore 的源码，刚把 Object 部分读完。对 JavaScript 中类型判断部分的总结。
 
 ## Object.prototype.toString()

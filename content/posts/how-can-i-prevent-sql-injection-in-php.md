@@ -4,8 +4,7 @@ date: 2015-12-21 13:22:28
 tags:
   - PHP
   - SQL
-categories:
-  - 技术文章
+issueId: 6
 ---
 > 翻译自 Stack Overflow: [How can I prevent SQL-injection in PHP?](http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php) 中的高票答案
 

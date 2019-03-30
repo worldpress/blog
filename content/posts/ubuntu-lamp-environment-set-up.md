@@ -4,8 +4,7 @@ date: 2015-08-24 12:00:00
 tags:
   - Ubuntu
   - PHP
-categories:
-  - 技术文章
+issueId: 2
 ---
 
 ## 安装

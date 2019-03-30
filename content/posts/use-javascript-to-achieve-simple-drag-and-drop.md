@@ -4,8 +4,7 @@ date: 2016-05-14 11:09:05
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 18
 ---
 
 ## 步骤
@@ -19,7 +18,6 @@ categories:
 **被拖拽的元素必须是相对父元素定位，或者是绝对定位**
 
 <!--more-->
-{% jsfiddle Lr73mn89 result,html,css,js %}
 
 ## 实现
 

@@ -3,11 +3,10 @@ title: Jade 模板引擎
 date: 2016-02-29 09:47:15
 tags:
   - Jade
-  - 模版引擎
   - 前端
-categories:
-  - 技术文章
+issudId: 10
 ---
+
 最近在改一个 Hexo 的主题 [apollo](https://github.com/pinggod/hexo-theme-apollo)。然后看到这个主题用的是叫做 Jade 的模版引擎写的。之前了解过几个模版引擎 ejs，swig 什么的，但是这些都是在原有的 HTML 中插标签，看起来有点乱。看到 Jade 后就深深的被它那如同 Python 的缩进语法深深吸引了，遂上网学习一发。
 
 Jade 是 JavaScript 实现的，供 Node 使用，原生支持 Express。但也有 PHP，Python 等其他语言的实现。（要是 HTML 模版用 Jade，CSS 用 Styl，后端用 Python，那岂不是很好玩~全是缩进缩进缩进=。=）

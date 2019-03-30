@@ -4,9 +4,7 @@ date: 2016-12-15 17:43:47
 tags:
   - Hexo
   - 前端
-  - 从零开始
-categories:
-  - 思考总结
+issueId: 33
 ---
 ## 写在前面
 本文将会从零开始开发一个简单的博客主题。样式主要参考 [Hexo theme](https://hexo.io/themes/) 中的 [Noise](https://github.com/lotabout/hexo-theme-noise) 主题。

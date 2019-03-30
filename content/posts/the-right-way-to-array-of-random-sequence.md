@@ -5,8 +5,7 @@ tags:
   - JavaScript
   - 前端
   - Underscore
-categories:
-  - 思考总结
+issueId: 23
 ---
 
 在 `underscore` 中有一个函数，其作用是将数组乱序排序，实现如下：

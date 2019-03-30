@@ -4,8 +4,8 @@ date: 2017-07-04 17:44:24
 tags:
   - Redux
   - React
-categories:
-  - 思考总结
+  - Javascript
+issueId: 43
 ---
 
 ## 三大原则

@@ -1,12 +1,12 @@
 ---
-title: 奇怪的原型链
+title: 奇怪的 JavaScript 原型链
 date: 2016-03-29 23:22:03
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 12
 ---
+
 在 JavaScript 中一切皆为对象（Object），但是却与 Java，C++ 等语言不同，没有“类”的概念，也没有所谓的“子类”和“父类”。JavaScript 中的对象是基于原型（prototype）来实现面向对象的，靠奇怪的原型链（prototype chain）来实现继承。
 
 ## 对象与原型
@@ -14,7 +14,8 @@ categories:
 
 <!--more-->
 创建自定义构造函数并使用构造函数创建对象：
-```
+
+```js
 function Person() {
   this.name = 'ahonn';
 }
@@ -27,7 +28,8 @@ var p1 = new Person();
 创建函数时，函数都会有一个原型（prototype）属性，该属性是一个指针，指向一个对象。而这个对象的用途就是包含那些共享的属性和方法。prototype 就是通过调用构造函数而创建的对象实例的原型对象。
 
 使用构造函数模式和原型模式来创建对象：
-```
+
+```js
 function Person(name) {
   this.name = name;
 }
@@ -48,7 +50,7 @@ p2.sayName(); // "person"
 ## 继承与原型链
 每个构造函数都有一个原型对象（创建函数时会有一个原型属性），原型对象中包含一个指向构造函数的指针（constructor 指向构造函数）,而实例对象中包含一个指向原型对象的内部指针（实例对象中的 [[Prototype]], 它不能被显式的访问）。
 
-```
+```js
 function Animal(name) {
         this.name = name;
 }
@@ -70,7 +72,8 @@ console.log(animal.sayName());  // "Dog"
 这样层层递进，构成实例和原型间的链条，就让实例之间产生了关联，那么就实现了继承。这个就是原型链的基本概念。
 
 实现原型继承的简单示例：
-```
+
+```js
 function Animal() {
   this.name = "Animal";
 }

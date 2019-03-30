@@ -5,8 +5,7 @@ tags:
   - JavaScript
   - 前端
   - Underscore
-categories:
-  - 思考总结
+issueId: 16
 ---
 
 ## optimizeCb

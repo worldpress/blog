@@ -4,8 +4,7 @@ date: 2016-11-30 18:52:21
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 31
 ---
 
 ## 工厂模式

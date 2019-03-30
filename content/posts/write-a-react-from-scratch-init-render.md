@@ -3,9 +3,9 @@ title: React 初始化渲染
 date: 2017-06-08
 tags:
   - React
-  - 从零开始
-categories:
-  - 思考总结
+  - JavaScript
+  - 前端
+issueId: 41
 ---
 
 该文章将阅读 React 初始化渲染相关的代码，并实现一个简单的将 JSX 渲染到页面的功能。（不包括组件生命周期与事件处理相关部分）

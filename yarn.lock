@@ -5037,10 +5037,10 @@ gatsby-source-filesystem@^2.0.22:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-github-issue@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-github-issue/-/gatsby-source-github-issue-1.0.1.tgz#df5d45018d32dd047e36ceb9e1d5002b42bcbab9"
-  integrity sha512-jKKtL5yoCZptA8jkOeRTBU3pS3zSU6/krxxlOTTfOuWcZk5O/o5zxQODSjnpdt/bDGkxku1Oiz5+hSkqXUtdVg==
+gatsby-source-github-issue@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-source-github-issue/-/gatsby-source-github-issue-1.0.3.tgz#63df8b38ef0c8a5a7f7438cea4d22f22e7548ca3"
+  integrity sha512-lXsFs0CvcNC71EskGWotdBQBHhb9DIgO/70uNwPittcKlhovWUmj5UPpjTcdP4F0DSyMPYZVo4PAiamGjV4Pjg==
   dependencies:
     axios "^0.18.0"
 

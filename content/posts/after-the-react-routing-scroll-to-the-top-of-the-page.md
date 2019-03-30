@@ -5,8 +5,7 @@ tags:
   - React
   - 前端
   - JavaScript
-categories:
-  - 技术文章
+issueId: 28
 ---
 
 在 React 组件间进行页面跳转后，发现页面的位置并不在页面顶部，而是在页面跳转前的位置。就是说浏览器的滚动条并没有回到顶部的位置。

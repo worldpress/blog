@@ -4,9 +4,9 @@ date: 2016-03-20 23:02:08
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 11
 ---
+
 最近在看 《JavaScript 高级程序设计》，也就是所谓的高程3。正好看到 `Function` 部分，看到了几个熟悉的字眼，`apply()`，`call()` 和 `bind()`。好像是有些面试题里面有，遂搞清楚了记录下。
 
 ## apply() 与 call()

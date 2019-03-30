@@ -4,9 +4,7 @@ date: 2018-11-17 20:33:12
 tags:
   - JavaScript
   - 前端
-  - Date
-categories:
-  - 技术文章
+issueId: 48
 ---
 
 最近在开发中使用了 `moment(string).isValid()` 去判断字符串是否为日期格式字符串。发现当字符串为 `xxxx-1` 时，在 Chrome 中 `moment('test-1').isValid()` 返回值为 true, 而当字符串为 `test1` 时则正确返回 false。而 Safari 则没有该问题，全部返回 false。

@@ -4,8 +4,7 @@ date: 2015-11-22 12:00:00
 tags:
   - PHP
   - Ubuntu
-categories:
-  - 思考总结
+issueId: 3
 ---
 > 记录，以便下次所需。
 

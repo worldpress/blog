@@ -4,8 +4,7 @@ date: 2016-04-28 21:56:42
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 15
 ---
 
 ## 变量提升

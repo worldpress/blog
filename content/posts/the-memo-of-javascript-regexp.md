@@ -5,8 +5,7 @@ tags:
   - JavaScript
   - 前端
   - RegExp
-categories:
-  - 技术文章
+issueId: 26
 ---
 
 JavaScript 创建正则表达式有两种方式：

@@ -3,8 +3,7 @@ title: Python curses 模块
 date: 2016-01-23 20:40:20
 tags:
   - Python
-categories:
-  - 技术文章
+issueId: 8
 ---
 
 Python 中的 curses 模块封装了 C 语言的 curses。curses 是一个能够提供基于文本终端窗口功能的动态库。它可以创建和管理一个窗口，使用8中不同的颜色，提供鼠标以及键盘支持。与 Tkinter 不同的是 curses 是基于终端的。

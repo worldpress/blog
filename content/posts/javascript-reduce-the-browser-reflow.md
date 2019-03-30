@@ -4,8 +4,7 @@ date: 2016-08-02 22:46:33
 tags:
   - JavaScript
   - 前端
-categories:
-  - 技术文章
+issueId: 24
 ---
 
 ## 什么是浏览器回流
