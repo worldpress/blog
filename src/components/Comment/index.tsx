@@ -1,7 +1,10 @@
 import * as React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+// @ts-ignore
 import Gitalk from 'gitalk';
-import 'gitalk/dist/gitalk.css';
+import _ from 'lodash/fp';
 
+import 'gitalk/dist/gitalk.css';
 import './index.scss';
 
 interface ICommentProps {
@@ -15,22 +18,38 @@ const Commemt = (props: ICommentProps) => {
     return null;
   }
 
+  const data = useStaticQuery(graphql`
+    query GetSiteGitalk {
+      site {
+        siteMetadata {
+          gitalk {
+            clientID
+            clientSecret
+            repo
+            owner
+          }
+        }
+      }
+    }
+  `);
+  const options: ISiteGitalk = _.get('site.siteMetadata.gitalk', data);
+
   React.useEffect(() => {
     const gitalk = new Gitalk({
-      clientID: 'af04686863d8fe77f3b3',
-      clientSecret: '908c476e842511483d95125bf57c9669db71fe51',
-      repo: 'blog',
-      owner: 'ahonn',
-      admin: ['ahonn'],
+      clientID: options.clientID,
+      clientSecret: options.clientSecret,
+      repo: options.repo,
+      owner: options.owner,
+      admin: [options.owner],
       id: location.pathname,
       number: id,
       distractionFreeMode: false,
     });
 
-    gitalk.render('comment-container');
+    gitalk.render('comment');
   }, [id]);
 
-  return <div id="comment-container" className="comment" />;
+  return <div id="comment" />;
 };
 
 export default Commemt;

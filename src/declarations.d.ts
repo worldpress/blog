@@ -5,9 +5,16 @@ declare interface ISiteMenuItem {
   path: string;
 }
 
-declare interface ISiteMetaLink {
+declare interface ISiteLink {
   name: string;
   link: string;
+}
+
+declare interface ISiteGitalk {
+  clientID: string;
+  clientSecret: string;
+  repo: string;
+  owner: string;
 }
 
 declare interface ISiteMetadata {
@@ -15,8 +22,9 @@ declare interface ISiteMetadata {
   since: number;
   author: string;
   menu: ISiteMenuItem[];
-  socials: ISiteMetaLink[];
-  friends: ISiteMetaLink[];
+  socials: ISiteLink[];
+  friends: ISiteLink[];
+  gitalk: ISiteGitalk;
 }
 
 declare interface IMarkdownRemark {

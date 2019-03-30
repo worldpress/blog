@@ -1,3 +1,66 @@
-.comment {
-  margin-bottom: 30px;
+#comment {
+  margin-bottom: 2rem;
+
+  .gt-container {
+    a {
+      color: #dc001c;
+      box-shadow: none;
+    }
+
+    .gt-link {
+      border-bottom: none;
+    }
+
+    .gt-ico {
+      svg {
+        fill: #dc001c;
+      }
+
+      &.gt-ico-github {
+        svg {
+          fill: #24292e;
+        }
+      }
+
+      &.gt-ico-tip {
+        svg {
+          fill: #6c7185;
+        }
+      }
+    }
+
+    .gt-header {
+      .gt-header-comment {
+        .gt-header-controls {
+          .gt-header-controls-tip {
+            color: #6c7185;
+          }
+
+          .gt-btn {
+            &.gt-btn-login {
+              background-color: #dc001c;
+              border-color: #dc001c;
+            }
+
+            &.gt-btn-preview {
+              color: #dc001c;
+              border-color: #dc001c;
+            }
+          }
+        }
+      }
+    }
+
+    .gt-comments {
+      padding-top: 2rem;
+
+      .gt-comments-null {
+        color: #6c7185;
+      }
+
+      .gt-comment-content {
+        background-color: rgba(#dc001c, 0.02);
+      }
+    }
+  }
 }

@@ -32,6 +32,12 @@ module.exports = {
       { name: 'yzzting', link: 'http://yzz1995.cn/' },
       { name: 'colmugx', link: 'https://colmugx.github.io/blog/' },
     ],
+    gitalk: {
+      clientID: 'af04686863d8fe77f3b3',
+      clientSecret: '908c476e842511483d95125bf57c9669db71fe51',
+      repo: 'blog',
+      owner: 'ahonn',
+    },
   },
   plugins: [
     {
