@@ -54,7 +54,7 @@ module.exports = {
         name: 'markdown-posts',
       },
     },
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
