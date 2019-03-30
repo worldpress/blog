@@ -7,13 +7,15 @@
       padding: 7px 10px;
       margin-right: 8px;
       margin-bottom: 8px;
-      color: #333;
+      color: #6c7185;
       border-radius: 3px;
       border: 1px solid #f0f0f0;
       box-shadow: none;
+      transition: all 0.3s ease;
 
       &:hover {
         color: #dc001c;
+        border-color: #dc001c;
       }
     }
   }

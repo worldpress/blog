@@ -1,5 +1,5 @@
 .post {
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 
   &.excerpt {
     margin-bottom: 20px;
@@ -8,6 +8,10 @@
 
     .post-header {
       margin-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
     }
   }
 
