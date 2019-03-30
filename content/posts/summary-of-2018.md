@@ -29,7 +29,7 @@ const checklist = [];
 
 ## 又一次来到杭州
 
-![飞机窗外](http://ahonn-me.oss-cn-beijing.aliyuncs.com/images/8vt9q.jpg)
+![飞机窗外](https://ahonn-me.oss-cn-beijing.aliyuncs.com/images/8vt9q.jpg)
 
 又一次，不同的是这一次来杭州不是短暂的实习了，而是可能是好几年的工作生活。而且这次的飞机没有延误了，天气也异常的好。
 
@@ -91,7 +91,7 @@ checklist.push('多阅读，尝试读一些英文原版书籍');
 
 今年的博客日PV：
 
-![博客日PV](http://ahonn-me.oss-cn-beijing.aliyuncs.com/images/c8g7c.png)
+![博客日PV](https://ahonn-me.oss-cn-beijing.aliyuncs.com/images/c8g7c.png)
 
 理所应当的数据很惨淡，毕竟只能依靠着去年的老文章过活。给明年的自己定一个可量化的目标：博客的日平均 PV 达到 500 人次。
 
@@ -103,7 +103,7 @@ checklist.push('多写文章，目标博客日平均 PV 500');
 
 照例，总结里头是少不了 Github 的 contributions 图的：
 
-![github](http://ahonn-me.oss-cn-beijing.aliyuncs.com/images/kikzc.png)
+![github](https://ahonn-me.oss-cn-beijing.aliyuncs.com/images/kikzc.png)
 
 但基本上是没有什么业余的个人项目了，博客主题也少有维护了。主要一个还是太忙，下班完完全是不想碰电脑的。这样其实不太好，业余没有积累的话就会越来越没有竞争力的。大部分的 commit 都是修改 [dotfiles](https://github.com/ahonn/dotfiles)，毕竟这个是我每天都会使用的。至于明年，肯定是不能跟今年一样懈怠的。准备写一写自己常用的一些工具软件，例如造一个 TODO APP 之类的，具体没有想好。目标是能够学一些新东西运用起来。
 

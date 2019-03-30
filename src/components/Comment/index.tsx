@@ -2,12 +2,18 @@ import * as React from 'react';
 import Gitalk from 'gitalk';
 import 'gitalk/dist/gitalk.css';
 
+import './index.scss';
+
 interface ICommentProps {
   id: number;
 }
 
 const Commemt = (props: ICommentProps) => {
   const { id } = props;
+
+  if (!id) {
+    return null;
+  }
 
   React.useEffect(() => {
     const gitalk = new Gitalk({
@@ -18,13 +24,13 @@ const Commemt = (props: ICommentProps) => {
       admin: ['ahonn'],
       id: location.pathname,
       number: id,
-      distractionFreeMode: true,
+      distractionFreeMode: false,
     });
 
     gitalk.render('comment-container');
   }, [id]);
 
-  return <div id="comment-container" />;
+  return <div id="comment-container" className="comment" />;
 };
 
 export default Commemt;
