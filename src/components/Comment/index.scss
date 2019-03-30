@@ -37,7 +37,8 @@
           }
 
           .gt-btn {
-            &.gt-btn-login {
+            &.gt-btn-login,
+            &.gt-btn-public {
               background-color: #dc001c;
               border-color: #dc001c;
             }
