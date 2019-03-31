@@ -9,6 +9,7 @@ interface ISearchInputProps {
 
 const SearchInput = (props: ISearchInputProps) => {
   const { value, onChange } = props;
+  const inputEl = React.useRef(null);
 
   const handleSearchChange = (e: React.ChangeEvent) => {
     // @ts-ignore
@@ -16,10 +17,15 @@ const SearchInput = (props: ISearchInputProps) => {
     onChange(val);
   };
 
+  React.useEffect(() => {
+    inputEl.current.focus();
+  }, []);
+
   return (
     <div className="search">
       <input
         type="text"
+        ref={inputEl}
         className="search-input"
         placeholder="站内搜索"
         value={value}
