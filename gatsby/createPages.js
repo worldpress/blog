@@ -2,7 +2,7 @@
 
 const path = require('path');
 
-const PAGE_SIZE = 15;
+const PAGE_SIZE = 10;
 
 function createIndexPages(actions, result) {
   const { createPage, createRedirect } = actions;
