@@ -4834,10 +4834,12 @@ gatsby-plugin-catch-links@^2.0.13:
     "@babel/runtime" "^7.0.0"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-gtag@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-gtag/-/gatsby-plugin-gtag-1.0.10.tgz#6e181ba67319adff2f1512ba23369954e8117d1c"
-  integrity sha512-euMp/ASUVL4Ear/FNPioNRG8u980RFeigTmS0pYyeUBqI5T3GcEm/6evc3KGwAWXWd4+e7UG6lofxWPtRDy9yw==
+gatsby-plugin-google-analytics@^2.0.18:
+  version "2.0.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.18.tgz#f56aa1d0fc65bbc2f902ce0bc25159ea2e571524"
+  integrity sha512-fW2WKo7onfxr9sVUCKKtDRUVqleVHBp9CMz7xVWnNpiM3+u4KgYWj7VzmjKPr00zgmp/AOEu1L7SUjYMDys0QA==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
 
 gatsby-plugin-manifest@^2.0.25:
   version "2.0.26"

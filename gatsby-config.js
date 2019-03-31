@@ -69,9 +69,10 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-gtag',
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: `UA-74273646-1`,
+        trackingId: 'UA-74273646-1',
+        optimizeId: 'GTM-PKS39F4',
       },
     },
     {
