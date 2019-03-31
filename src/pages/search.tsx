@@ -34,10 +34,8 @@ const SearchPage = (props: ISearchPageProps) => {
       <Container>
         <Row className="justify-content-md-center">
           <Col lg={10}>
-            <SearchInput value={keyword} onChange={setKeyword} />
-            {result.length > 0 && (
-              <SearchResult posts={result} />
-            )}
+            <SearchInput value={keyword} count={result.length} onChange={setKeyword} />
+            {result.length > 0 && <SearchResult posts={result} />}
           </Col>
         </Row>
       </Container>
@@ -47,9 +45,7 @@ const SearchPage = (props: ISearchPageProps) => {
 
 export const query = graphql`
   query GetSearchPost {
-    allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           id

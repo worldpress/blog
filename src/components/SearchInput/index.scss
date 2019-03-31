@@ -1,11 +1,8 @@
-.search {
-  &::placeholder {
-    color: rgba(0, 0, 0, 0.15);
-    font-weight: 200;
-  }
+.search-input {
+  position: relative;
 
-  &-input {
-    height: 70px;
+  .input {
+    height: 60px;
     width: 100%;
     margin: 20px 0 30px;
     padding: 0;
@@ -13,5 +10,19 @@
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     outline: none;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.15);
+      font-weight: 200;
+    }
+  }
+
+  .count {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    font-size: 40px;
+    line-height: 60px;
+    color: rgba(0, 0, 0, 0.15);
   }
 }

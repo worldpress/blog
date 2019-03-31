@@ -1,14 +1,16 @@
 import * as React from 'react';
+import _ from 'lodash/fp';
 
 import './index.scss';
 
 interface ISearchInputProps {
-  value: any;
+  value: string;
+  count: number;
   onChange: any;
 }
 
 const SearchInput = (props: ISearchInputProps) => {
-  const { value, onChange } = props;
+  const { value, count, onChange } = props;
   const inputEl = React.useRef(null);
 
   const handleSearchChange = (e: React.ChangeEvent) => {
@@ -22,15 +24,20 @@ const SearchInput = (props: ISearchInputProps) => {
   }, []);
 
   return (
-    <div className="search">
+    <div className="search-input">
       <input
         type="text"
         ref={inputEl}
-        className="search-input"
+        className="input"
         placeholder="站内搜索"
         value={value}
         onChange={handleSearchChange}
       />
+      {!_.isEmpty(value) && (
+        <span className="count">
+          {count}
+        </span>
+      )}
     </div>
   );
 };
