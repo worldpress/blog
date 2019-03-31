@@ -3,6 +3,8 @@
 <url> <loc>https://www.ahonn.me/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.ahonn.me/page/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.ahonn.me/page/3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.ahonn.me/page/4</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.ahonn.me/page/5</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.ahonn.me/2019/03/30/GraphQL学习笔记/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.ahonn.me/2018/12/30/2018年终总结/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.ahonn.me/2018/12/30/summary-of-2018/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
