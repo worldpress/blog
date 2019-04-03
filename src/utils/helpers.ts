@@ -4,7 +4,6 @@ import format from 'date-fns/format';
 // getPostLink :: IMarkdownRemarkNode -> string
 export const getPostLink = (post: IMarkdownRemarkNode) => {
   const { fields: { slug } } = post;
-  // const slug = title.replace(/[^A-Za-z0-9\u4e00-\u9fa5]/g, '');
   return slug;
 };
 

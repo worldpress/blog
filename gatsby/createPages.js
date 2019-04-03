@@ -45,9 +45,6 @@ function createPostPages(actions, result) {
       fileAbsolutePath,
     } = node;
 
-    // const slug = title.replace(/[^A-Za-z0-9\u4e00-\u9fa5]/g, '');
-    // const postPath = `/${date}/${slug}/`;
-
     console.log(`createPage: ${slug}`);
     createPage({
       path: slug,

@@ -6,13 +6,13 @@ module.exports = ({ node, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const { frontmatter } = node;
 
-    const title = frontmatter.title.replace(/[^A-Za-z0-9\u4e00-\u9fa5]/g, '');
-    const date = format(frontmatter.date, 'YYYY/MM/DD');
+    const date = format(frontmatter.date, 'YYYYMMDD');
+    const slug = `/posts/${date}${frontmatter.issueId}`;
 
     createNodeField({
       node,
       name: 'slug',
-      value: `/${date}/${title}/`,
+      value: slug,
     });
   }
 };
