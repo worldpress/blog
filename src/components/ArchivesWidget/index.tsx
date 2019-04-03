@@ -4,7 +4,7 @@ import format from 'date-fns/format';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FaCaretRight } from 'react-icons/fa';
 
-import { groupByDateFromPost, getMarkdownRemarkEdgeNode } from '../../utils/helpers';
+import { groupByDateFromNodes, getMarkdownRemarkEdgeNode } from '../../utils/helpers';
 import { DATE_SYMBOL } from '../../consts';
 import './index.scss';
 
@@ -29,7 +29,8 @@ const ArchivesWidget = (props: IArchivesWidgetProps) => {
       }
     }
   `);
-  const archiveGroup = groupByDateFromPost(getMarkdownRemarkEdgeNode(data));
+  const nodes = getMarkdownRemarkEdgeNode(data);
+  const archiveGroup = groupByDateFromNodes(nodes);
 
   return (
     <div className="widget archives">

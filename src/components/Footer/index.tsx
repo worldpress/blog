@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 import { FaHeart } from 'react-icons/fa';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -13,10 +13,7 @@ const Footer = (props: IFooterProps) => {
   const { since, author, menu, socials, friends } = props.metadata;
 
   const currentYear = new Date().getFullYear();
-  const extra = [
-    { title: 'SOCIALS / 社交', items: socials },
-    { title: 'FRIENDS / 友链', items: friends },
-  ];
+  const extra = [{ title: 'SOCIALS / 社交', items: socials }, { title: 'FRIENDS / 友链', items: friends }];
 
   return (
     <footer className="footer">
@@ -27,9 +24,15 @@ const Footer = (props: IFooterProps) => {
               <ul className="menu">
                 {menu.map(({ name, path }) => (
                   <li className="menu-item" key={path}>
-                    <Link to={path} className="menu-item__link">
-                      {name}
-                    </Link>
+                    {path.startsWith('http') ? (
+                      <a href={path} className="menu-item__link" target="__blank">
+                        {name}
+                      </a>
+                    ) : (
+                      <Link to={path} className="menu-item__link">
+                        {name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

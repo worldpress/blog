@@ -20,13 +20,14 @@ module.exports = {
     menu: [
       // { name: '首页', path: '/' },
       // { name: '关于我', path: '/about' },
-      { name: '搜索', path: '/search' },
+      { name: '搜索', path: '/search', header: true },
+      { name: 'Wiki', path: 'https://wiki.ahonn.me', header: false },
+      { name: 'RSS', path: 'https://www.ahonn.me/atom.xml', header: false },
     ],
     socials: [
       { name: 'Github', link: 'https://github.com/ahonn' },
       { name: 'Twitter', link: 'https://twitter.com/ahonnjiang' },
       { name: 'Zhihu', link: 'https://www.zhihu.com/people/ahonn/activities' },
-      { name: 'Wiki', link: 'https//wiki.ahonn.me' },
     ],
     friends: [
       { name: 'yzzting', link: 'http://yzz1995.cn/' },
@@ -54,6 +55,13 @@ module.exports = {
         name: 'markdown-posts',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-74273646-1',
+        optimizeId: 'GTM-PKS39F4',
+      },
+    },
     // 'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -69,10 +77,56 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-feed`,
       options: {
-        trackingId: 'UA-74273646-1',
-        optimizeId: 'GTM-PKS39F4',
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/atom.xml',
+            title: "Ahonn's Blog RSS Feed",
+          },
+        ],
       },
     },
     {

@@ -54,6 +54,9 @@ export const query = graphql`
             date(formatString: "YYYY/MM/DD")
             tags
           }
+          fields {
+            slug
+          }
           excerpt(truncate: true)
           rawMarkdownBody
           timeToRead

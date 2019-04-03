@@ -52,7 +52,12 @@ const Header = (props: IHeaderComponentProps) => {
         </div>
         <nav className="nav">
           <ul className="menu">
-            {menu.map(({ name, path }) => {
+            {menu.map(({ name, path, header }) => {
+              console.log(name, header);
+              if (!header) {
+                return null;
+              }
+
               if (path === '/search') {
                 return (
                   <li key={path} className="menu-item search">
@@ -69,10 +74,14 @@ const Header = (props: IHeaderComponentProps) => {
               });
               return (
                 <li className={itemClasss} key={path}>
-                  {_.startsWith('//', path) ? (
-                    <a href={path} className="menu-item__link" target="__blank">{name}</a>
+                  {path.startsWith('http') ? (
+                    <a href={path} className="menu-item__link" target="__blank">
+                      {name}
+                    </a>
                   ) : (
-                    <Link to={path} className="menu-item__link">{name}</Link>
+                    <Link to={path} className="menu-item__link">
+                      {name}
+                    </Link>
                   )}
                 </li>
               );

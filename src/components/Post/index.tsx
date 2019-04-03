@@ -14,7 +14,12 @@ interface IPostDetailProps {
 
 const Post = (props: IPostDetailProps) => {
   const { post, excerpt } = props;
-  const { frontmatter: { title, date, tags }, html, excerpt: exp, timeToRead } = post;
+  const {
+    frontmatter: { title, date, tags },
+    html,
+    excerpt: exp,
+    timeToRead,
+  } = post;
   const postLink = getPostLink(post);
 
   const clazz = classnames({
@@ -32,9 +37,7 @@ const Post = (props: IPostDetailProps) => {
             </Link>
           </h2>
         ) : (
-          <h1 className="post-title">
-            {title}
-          </h1>
+          <h1 className="post-title">{title}</h1>
         )}
         <div className="post-meta">
           <span className="post-created-at">

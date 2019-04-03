@@ -3,9 +3,9 @@ import format from 'date-fns/format';
 
 // getPostLink :: IMarkdownRemarkNode -> string
 export const getPostLink = (post: IMarkdownRemarkNode) => {
-  const { frontmatter: { date, title } } = post;
-  const slug = title.replace(/[^A-Za-z0-9\u4e00-\u9fa5]/g, '');
-  return `/${date}/${slug}/`;
+  const { fields: { slug } } = post;
+  // const slug = title.replace(/[^A-Za-z0-9\u4e00-\u9fa5]/g, '');
+  return slug;
 };
 
 // formatPostDate :: string -> string
@@ -31,12 +31,13 @@ export const getMarkdownRemarkEdgeNode = _.compose(
 );
 
 // groupByDateFromPost :: IMarkdownRemarkNode[] -> Dictionary<ImarkdownRemarkNode[]>
-export const groupByDateFromPost = _.groupBy(_.compose(
+export const groupByDateFromNodes = _.groupBy(_.compose(
   (date) => format(date, 'YYYY/MM'),
   _.get('frontmatter.date'),
 ));
 
-export const collectTagNamesFromPost = _.compose(
+// collectTagNamesFromNodes :: IMarkdownRemarkNode[] -> string[]
+export const collectTagNamesFromNodes = _.compose(
   _.uniq,
   _.reduce(_.concat, []),
   _.map('frontmatter.tags'),

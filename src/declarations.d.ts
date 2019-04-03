@@ -3,6 +3,7 @@ declare const graphql: (query: TemplateStringsArray) => void;
 declare interface ISiteMenuItem {
   name: string;
   path: string;
+  header: boolean;
 }
 
 declare interface ISiteLink {
@@ -42,6 +43,9 @@ declare interface IMarkdownRemarkNode {
     date: string;
     tags: string[];
     issueId: number;
+  };
+  fields: {
+    slug: string;
   };
   excerpt: string;
   html: string;

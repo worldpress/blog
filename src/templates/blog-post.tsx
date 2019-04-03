@@ -70,6 +70,9 @@ export const query = graphql`
         tags
         issueId
       }
+      fields {
+        slug
+      }
       excerpt(truncate: true)
       html
       timeToRead

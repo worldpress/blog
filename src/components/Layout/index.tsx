@@ -24,6 +24,7 @@ const Layout = (props: ILayoutProps) => {
           menu {
             name
             path
+            header
           }
           socials {
             name

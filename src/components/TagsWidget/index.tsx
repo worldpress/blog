@@ -2,7 +2,7 @@ import * as React from 'react';
 import _ from 'lodash/fp';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import { collectTagNamesFromPost, getMarkdownRemarkEdgeNode } from '../../utils/helpers';
+import { getMarkdownRemarkEdgeNode, collectTagNamesFromNodes } from '../../utils/helpers';
 import { TAG_SYMBOL } from '../../consts';
 import './index.scss';
 
@@ -26,7 +26,8 @@ const TagsWidget = (props: ITagsWidgetProps) => {
       }
     }
   `);
-  const tagNames = collectTagNamesFromPost(getMarkdownRemarkEdgeNode(data));
+  const nodes = getMarkdownRemarkEdgeNode(data);
+  const tagNames = collectTagNamesFromNodes(nodes);
 
   return (
     <div className="widget tags">
