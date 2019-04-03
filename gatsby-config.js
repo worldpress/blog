@@ -77,6 +77,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: ["/page/*", `/search`],
+      }
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -173,7 +179,6 @@ module.exports = {
         implementation: require('sass'),
       },
     },
-    'gatsby-plugin-sitemap',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
