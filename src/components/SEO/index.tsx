@@ -42,6 +42,11 @@ const SEO = (props: ISEOProps) => {
       htmlAttributes={{ lang }}
       title={metaTitle}
       meta={[
+        // FIXME: add theme_color into gatsby-config, maybe use _config.yml
+        {
+          name: 'theme-color',
+          content: '#dc001c',
+        },
         {
           name: 'description',
           content: metaDescription,

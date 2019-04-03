@@ -34,6 +34,11 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
   },
 });
 
+Wordpress2016.headerFontFamily =  ['Georgia', 'serif'];
+Wordpress2016.bodyFontFamily =  ['Georgia', 'serif'];
+
+delete Wordpress2016.googleFonts;
+
 const typography = new Typography(Wordpress2016);
 
 // Hot reload typography in development.

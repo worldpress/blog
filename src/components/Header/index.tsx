@@ -46,7 +46,7 @@ const Header = (props: IHeaderComponentProps) => {
       <Container>
         <div className="title">
           <h1 className="title__link" onClick={() => navigate('/')}>
-            <img className="title__icon" src={iconPng} />
+            <img className="title__icon" src={iconPng} alt={title} />
             {title}
           </h1>
         </div>
@@ -60,7 +60,7 @@ const Header = (props: IHeaderComponentProps) => {
               if (path === '/search') {
                 return (
                   <li key={path} className="menu-item search">
-                    <Link to="/search" className="menu-item__link">
+                    <Link to="/search" className="menu-item__link" aria-label={name}>
                       <FaSearch className="menu-item__icon" />
                     </Link>
                   </li>
@@ -74,11 +74,11 @@ const Header = (props: IHeaderComponentProps) => {
               return (
                 <li className={itemClasss} key={path}>
                   {path.startsWith('http') ? (
-                    <a href={path} className="menu-item__link" target="__blank">
+                    <a href={path} className="menu-item__link" target="__blank" aria-label={name}>
                       {name}
                     </a>
                   ) : (
-                    <Link to={path} className="menu-item__link">
+                    <Link to={path} className="menu-item__link" aria-label={name}>
                       {name}
                     </Link>
                   )}

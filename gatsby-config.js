@@ -62,7 +62,7 @@ module.exports = {
         optimizeId: 'GTM-PKS39F4',
       },
     },
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
