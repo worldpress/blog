@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+Disallow: /page/
+Disallow: /search
+Sitemap: https://www.ahonn.me/sitemap.xml
