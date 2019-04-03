@@ -53,7 +53,6 @@ const Header = (props: IHeaderComponentProps) => {
         <nav className="nav">
           <ul className="menu">
             {menu.map(({ name, path, header }) => {
-              console.log(name, header);
               if (!header) {
                 return null;
               }
