@@ -1,5 +1,6 @@
 import * as React from 'react';
 import _ from 'lodash/fp';
+import { FaHashtag } from 'react-icons/fa';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import { getMarkdownRemarkEdgeNode, collectTagNamesFromNodes } from '../../utils/helpers';
@@ -32,7 +33,7 @@ const TagsWidget = (props: ITagsWidgetProps) => {
   return (
     <div className="widget tags">
       <h3 className="widget-title">
-        &lt;标签 /&gt;
+        标签
       </h3>
       <div className="widget-content">
         {tagNames.slice(0, size).map((name: string) => (
@@ -42,6 +43,7 @@ const TagsWidget = (props: ITagsWidgetProps) => {
               to={`/search?keyword=${TAG_SYMBOL} ${name}`}
             >
               <span className="tag-item__text">
+                <FaHashtag className="tag-item__icon" />
                 {name}
               </span>
             </Link>

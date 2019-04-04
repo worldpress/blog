@@ -27,7 +27,7 @@ const Pagination = (props: IPagintionProps) => {
               <FaChevronLeft />
             </span>
             <span className="pagination__text">
-              在这之前
+              上一页
             </span>
           </Link>
         </div>
@@ -36,7 +36,7 @@ const Pagination = (props: IPagintionProps) => {
         <div className="pagination-after">
           <Link className="pagination__link" to={`/page/${page - 1}`}>
             <span className="pagination__text">
-              在这之后
+              下一页
             </span>
             <span className="pagination-after__icon">
               <FaChevronRight />

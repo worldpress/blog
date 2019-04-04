@@ -35,10 +35,10 @@ const ArchivesWidget = (props: IArchivesWidgetProps) => {
   return (
     <div className="widget archives">
       <h3 className="widget-title">
-        &lt;归档 /&gt;
+        归档
       </h3>
       <div className="widget-content">
-        {_.keys(archiveGroup).slice(0, size).map((date: string) => (
+        {archiveGroup.slice(0, size).map(([date, posts]: [string, IMarkdownRemarkNode[]]) => (
           <div className="archive-item" key={date}>
             <Link
               className="archive-item__link"
@@ -52,7 +52,7 @@ const ArchivesWidget = (props: IArchivesWidgetProps) => {
                   {format(date, 'YYYY年MM月')}
                 </span>
                 <span className="archive-item__count">
-                  ({_.size(archiveGroup[date])})
+                  ({_.size(posts)})
                 </span>
               </span>
             </Link>

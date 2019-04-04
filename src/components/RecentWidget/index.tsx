@@ -16,7 +16,7 @@ const RecentWidget = (props: IRecentWidgetProps) => {
   return (
     <div className="widget recent">
       <h3 className="widget-title">
-        &lt;最新文章 /&gt;
+        最新文章
       </h3>
       <div className="widget-content">
         {posts.slice(0, size).map((post) => {

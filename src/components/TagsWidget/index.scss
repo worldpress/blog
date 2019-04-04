@@ -18,5 +18,13 @@
         border-color: #dc001c;
       }
     }
+
+    &__icon {
+      position: relative;
+      top: 1px;
+      margin-right: 1px;
+      font-size: .75rem;
+      line-height: 1rem;
+    }
   }
 }
