@@ -4,7 +4,7 @@ date: 2016-02-29 09:47:15
 tags:
   - Jade
   - 前端
-issudId: 10
+issueId: 10
 ---
 
 最近在改一个 Hexo 的主题 [apollo](https://github.com/pinggod/hexo-theme-apollo)。然后看到这个主题用的是叫做 Jade 的模版引擎写的。之前了解过几个模版引擎 ejs，swig 什么的，但是这些都是在原有的 HTML 中插标签，看起来有点乱。看到 Jade 后就深深的被它那如同 Python 的缩进语法深深吸引了，遂上网学习一发。

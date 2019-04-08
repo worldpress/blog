@@ -79,8 +79,26 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        exclude: ["/page/*", `/search`],
-      }
+        exclude: ['/page/*', `/search`],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+
+            allSitePage(
+              filter: {context: {redirect: {eq: null}}}
+            ) {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+        }`,
+      },
     },
     {
       resolve: `gatsby-plugin-feed`,
