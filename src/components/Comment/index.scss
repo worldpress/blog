@@ -29,6 +29,10 @@
       }
     }
 
+    .gt-action.is--active:before {
+      background-color: #dc001c;
+    }
+
     .gt-header {
       .gt-header-comment {
         .gt-header-controls {
