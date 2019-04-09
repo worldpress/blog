@@ -6,7 +6,6 @@ branches:
     - master
 
 before_install:
-  - npm install --global yarn
   - yarn install
 
 script:
