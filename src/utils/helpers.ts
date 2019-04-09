@@ -26,6 +26,21 @@ export const getDocumentScrollTop = () => {
   return window.pageYOffset || document.documentElement.scrollTop;
 };
 
+// isInViewportByElementId :: string -> boolean
+export const isInViewportByElementId = (id) => {
+  const $el = document.getElementById(id);
+  if ($el === null) {
+    return false;
+  }
+  const rect = $el.getBoundingClientRect();
+  const clientHeight = document.documentElement.clientHeight;
+  return rect.top < clientHeight;
+};
+
+export const replaceUrlWithoutRefresh = (url) => {
+  history.replaceState('', document.title, url);
+};
+
 // getMarkdownRemarkEdgeNode :: ImarkdownRemark -> IMarkdownRemarkNode[]
 export const getMarkdownRemarkEdgeNode = _.compose(
   _.map('node'),

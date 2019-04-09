@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-// @ts-ignore
-import Gitalk from 'gitalk';
-import _ from 'lodash/fp';
+
+import useGitalk from '../../hooks/useGitalk';
+import useWindowScroll from '../../hooks/useWindowScroll';
+import { isInViewportByElementId, replaceUrlWithoutRefresh } from '../../utils/helpers';
 
 import 'gitalk/dist/gitalk.css';
 import './index.scss';
+
+const COMMENT_ELEMENT_ID = 'comment';
 
 interface ICommentProps {
   id: number;
@@ -13,41 +15,16 @@ interface ICommentProps {
 
 const Commemt = (props: ICommentProps) => {
   const { id } = props;
+  useGitalk(COMMENT_ELEMENT_ID, id);
 
-  if (!id) {
-    return null;
-  }
-
-  const data = useStaticQuery(graphql`
-    query GetSiteGitalk {
-      site {
-        siteMetadata {
-          gitalk {
-            clientID
-            clientSecret
-            repo
-            owner
-          }
-        }
-      }
+  // add `#comment` to url when scroll comment element into viewport
+  useWindowScroll(() => {
+    if (isInViewportByElementId(COMMENT_ELEMENT_ID)) {
+      replaceUrlWithoutRefresh(`${location.pathname}#${COMMENT_ELEMENT_ID}`);
+    } else if (location.hash) {
+      replaceUrlWithoutRefresh(location.pathname);
     }
-  `);
-  const options: ISiteGitalk = _.get('site.siteMetadata.gitalk', data);
-
-  React.useEffect(() => {
-    const gitalk = new Gitalk({
-      clientID: options.clientID,
-      clientSecret: options.clientSecret,
-      repo: options.repo,
-      owner: options.owner,
-      admin: [options.owner],
-      id: location.pathname,
-      number: id,
-      distractionFreeMode: false,
-    });
-
-    gitalk.render('comment');
-  }, [id]);
+  }, /* resize = */ true);
 
   return <div id="comment" />;
 };
