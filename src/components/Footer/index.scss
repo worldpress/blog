@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables.scss";
+
 .footer {
   width: 100%;
   padding: 30px 0;
@@ -21,7 +23,7 @@
         box-shadow: none;
 
         &:hover {
-          color: #dc001c;
+          color: $theme-color;
         }
       }
     }
@@ -62,7 +64,7 @@
           box-shadow: none;
 
           &:hover {
-            color: #dc001c;
+            color: $theme-color;
             border-bottom: none;
           }
         }
@@ -109,7 +111,7 @@
           box-shadow: none;
 
           &:hover {
-            color: #dc001c;
+            color: $theme-color;
             border-bottom: none;
           }
         }

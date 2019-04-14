@@ -1,9 +1,11 @@
+@import "../../assets/styles/variables.scss";
+
 #comment {
   margin-bottom: 2rem;
 
   .gt-container {
     a {
-      color: #dc001c;
+      color: $theme-color;
       box-shadow: none;
     }
 
@@ -13,7 +15,7 @@
 
     .gt-ico {
       svg {
-        fill: #dc001c;
+        fill: $theme-color;
       }
 
       &.gt-ico-github {
@@ -30,7 +32,7 @@
     }
 
     .gt-action.is--active:before {
-      background-color: #dc001c;
+      background-color: $theme-color;
     }
 
     .gt-header {
@@ -43,13 +45,13 @@
           .gt-btn {
             &.gt-btn-login,
             &.gt-btn-public {
-              background-color: #dc001c;
-              border-color: #dc001c;
+              background-color: $theme-color;
+              border-color: $theme-color;
             }
 
             &.gt-btn-preview {
-              color: #dc001c;
-              border-color: #dc001c;
+              color: $theme-color;
+              border-color: $theme-color;
             }
           }
         }
@@ -64,7 +66,12 @@
       }
 
       .gt-comment-content {
-        background-color: rgba(#dc001c, 0.02);
+        background-color: rgba($theme-color, 0.02);
+
+        blockquote {
+          background-color: rgba($theme-color, 0.03);
+          border-left: 0.25em solid rgba($theme-color, 0.1);
+        }
       }
     }
   }

@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .markdown {
   code {
     font-size: 0.9rem;
@@ -7,7 +9,7 @@
     box-shadow: none;
 
     svg path {
-      fill: #dc001c;
+      fill: $theme-color;
     }
   }
 

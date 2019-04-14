@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables.scss";
+
 .archives {
   .archive-item {
     &__link {
@@ -21,7 +23,7 @@
       letter-spacing: 1px;
 
       &:hover {
-        color: #dc001c;
+        color: $theme-color;
       }
     }
 

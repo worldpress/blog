@@ -2,6 +2,8 @@ import Typography from 'typography';
 // @ts-ignore
 import Wordpress2016 from 'typography-theme-wordpress-2016';
 
+const themeColor = '#FA7268';
+
 // @ts-ignore
 // tslint:disable-next-line:no-shadowed-variable
 Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
@@ -14,7 +16,7 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
   },
   'a': {
     boxShadow: '0 1px 0 0 currentColor',
-    color: '#dc001c',
+    color: themeColor,
     textDecoration: 'none',
   },
   'p': {
@@ -30,7 +32,7 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
     paddingTop: rhythm(1 / 4),
     paddingBottom: rhythm(1 / 4),
     background: '#fafafa',
-    borderLeft: `${rhythm(1 / 8)} solid #dc001c`,
+    borderLeft: `${rhythm(1 / 8)} solid ${themeColor}`,
   },
 });
 

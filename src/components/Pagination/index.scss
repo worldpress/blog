@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables.scss";
+
 .pagination {
   margin-top: 10px;
   margin-bottom: 40px;
@@ -17,7 +19,7 @@
 
     &:hover {
       color: #fff;
-      background-color: #dc001c;
+      background-color: $theme-color;
     }
   }
 

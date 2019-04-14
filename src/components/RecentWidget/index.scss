@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables.scss";
+
 .recent {
   .recent-item {
     margin-bottom: 15px;
@@ -22,7 +24,7 @@
       transition: all 0.2s ease;
 
       &:hover {
-        color: #dc001c;
+        color: $theme-color;
         text-decoration: underline;
       }
     }
