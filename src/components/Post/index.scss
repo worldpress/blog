@@ -1,21 +1,21 @@
 @import "../../assets/styles/variables.scss";
 
 .post {
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
 
-  &.excerpt {
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.0785);
+  // &.simple {
+  //   margin-bottom: 20px;
+  //   padding-bottom: 30px;
+  //   border-bottom: 1px solid rgba(0, 0, 0, 0.0785);
 
-    .post-header {
-      margin-top: 0;
-    }
+  //   .post-header {
+  //     margin-top: 0;
+  //   }
 
-    &:last-child {
-      border-bottom: none;
-    }
-  }
+  //   &:last-child {
+  //     border-bottom: none;
+  //   }
+  // }
 
   .post-header {
     margin-top: 20px;
@@ -57,7 +57,7 @@
   }
 
   .post-content {
-    .post-excerpt {
+    .post-simple {
       margin-top: 10px;
       margin-bottom: 20px;
       color: rgba(#2e3444, 0.85);

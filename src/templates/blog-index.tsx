@@ -37,7 +37,7 @@ const IndexPageTemplate = (props: IIndexPageProps) => {
           <Col lg={8}>
             <div className="posts">
               {posts.map((node: IMarkdownRemarkNode) => (
-                <Post key={node.id} post={node} excerpt />
+                <Post key={node.id} post={node} simple />
               ))}
             </div>
             <Pagination page={page} size={limit} total={total} />

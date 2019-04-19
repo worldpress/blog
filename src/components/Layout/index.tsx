@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { get } from 'lodash/fp';
 import { graphql, useStaticQuery } from 'gatsby';
+import { ThemeProvider } from 'react-jss';
 
 import Header from '../Header';
 import Footer from '../Footer';
 
+import theme from '../../styles/theme';
 import './index.scss';
 
 interface ILayoutProps extends React.HTMLProps<HTMLDivElement> {
@@ -41,13 +43,15 @@ const Layout = (props: ILayoutProps) => {
   const metadata = get('site.siteMetadata', data);
 
   return (
-    <div className="layout">
-      <Header location={location} metadata={metadata} />
-      <div className="content">
-        {props.children}
+    <ThemeProvider theme={theme}>
+      <div className="layout">
+        <Header location={location} metadata={metadata} />
+        <div className="content">
+          {props.children}
+        </div>
+        <Footer metadata={metadata} />
       </div>
-      <Footer metadata={metadata} />
-    </div>
+    </ThemeProvider>
   );
 };
 

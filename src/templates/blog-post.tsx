@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { graphql, navigate } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
@@ -76,6 +76,20 @@ export const query = graphql`
       excerpt(truncate: true)
       html
       timeToRead
+    }
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+          }
+          excerpt(truncate: true)
+        }
+      }
     }
   }
 `;

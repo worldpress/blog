@@ -197,6 +197,12 @@ module.exports = {
         implementation: require('sass'),
       },
     },
+    {
+      resolve: 'gatsby-plugin-jss',
+      options: {
+        theme: require('./src/styles/theme.ts'),
+      },
+    },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
