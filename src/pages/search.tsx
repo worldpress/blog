@@ -1,13 +1,10 @@
 import * as React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { graphql } from 'gatsby';
 import _ from 'lodash/fp';
-import { Container, Row, Col } from 'react-bootstrap';
 
 import Layout from '../components/Layout';
-import SearchInput from '../components/SearchInput';
-import SearchResult from '../components/SearchResult';
-import useQueryParam from '../hooks/useQueryParam';
-import useSearchResult from '../hooks/useSearchResult';
+import Search from '../components/Search';
 import { getMarkdownRemarkEdgeNode } from '../utils/helpers';
 
 interface ISearchPageProps {
@@ -26,16 +23,12 @@ const SearchPage = (props: ISearchPageProps) => {
   const { location, data } = props;
   const posts = getMarkdownRemarkEdgeNode(data);
 
-  const [keyword = '', setKeyword] = useQueryParam(location, 'keyword');
-  const result = useSearchResult(posts, keyword as string);
-
   return (
     <Layout location={location}>
       <Container>
         <Row className="justify-content-md-center">
           <Col lg={10}>
-            <SearchInput value={keyword} count={result.length} onChange={setKeyword} />
-            {result.length > 0 && <SearchResult posts={result} />}
+            <Search posts={posts} />
           </Col>
         </Row>
       </Container>
