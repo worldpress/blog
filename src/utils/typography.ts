@@ -2,6 +2,8 @@ import Typography from 'typography';
 // @ts-ignore
 import Wordpress2016 from 'typography-theme-wordpress-2016';
 
+import theme from '../styles/theme';
+
 const themeColor = '#FA7268';
 
 // @ts-ignore
@@ -15,24 +17,25 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
     fontWeight: '400',
   },
   'a': {
-    boxShadow: '0 1px 0 0 currentColor',
-    color: themeColor,
+    boxShadow: `0 1px 0 0 ${theme.themeColor}`,
+    color: theme.themeColor,
     textDecoration: 'none',
   },
   'p': {
-    lineHeight: rhythm(9 / 10),
+    lineHeight: rhythm(1),
+    marginBottom: rhythm(1 / 2),
   },
   'li': {
-    lineHeight: rhythm(9 / 10),
+    lineHeight: rhythm(1 / 2),
   },
   'blockquote': {
-    fontSize: '1rem',
     marginRight: 0,
     marginTop: rhythm(1),
-    paddingTop: rhythm(1 / 4),
-    paddingBottom: rhythm(1 / 4),
+    paddingTop: rhythm(1 / 3),
+    paddingBottom: rhythm(1 / 3),
     background: '#fafafa',
-    borderLeft: `${rhythm(1 / 8)} solid ${themeColor}`,
+    fontSize: rhythm(4 / 7),
+    borderLeft: `${rhythm(1 / 8)} solid ${theme.themeColor}`,
   },
 });
 

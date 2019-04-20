@@ -13,7 +13,7 @@ const SearchResult = (props: ISearchResultProps) => {
   return (
     <div className="search-result">
       {posts.map((node: IMarkdownRemarkNode) => (
-        <Post key={node.id} post={node} excerpt />
+        <Post key={node.id} post={node} simple />
       ))}
     </div>
   );

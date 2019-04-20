@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import withStyles from 'react-jss';
+import withStyles, { WithStyles } from 'react-jss';
 
 import PostHeader from './PostHeader';
 import PostContent from './PostContent';
@@ -9,33 +9,28 @@ import PostContext from './context';
 
 import { getPostLink } from '../../utils/helpers';
 
-interface IPostDetailProps {
+const styles = (theme) => ({
+  post: {
+    paddingBottom: '10px',
+  },
+  simple: {
+    marginBottom: '20px',
+    paddingBottom: '30px',
+    borderBottom: theme.defaultBorder,
+
+    '&:last-child': {
+      borderBottom: 'none',
+    },
+  },
+});
+
+type IPostProps = WithStyles<typeof styles> & {
   post: IMarkdownRemarkNode;
   simple?: boolean;
 }
 
-const styles = theme => ({
-  'post': {
-    paddingBottom: '10px',
-
-    '&.simple': {
-      marginBottom: '20px',
-      paddingBottom: '30px',
-      borderBottom: theme.border,
-
-      'post-header': {
-        marginTop: '0',
-      },
-
-      '&:last-child': {
-        borderBottom: 'none',
-      },
-    }
-  }
-});
-
 const Post = (props: IPostDetailProps) => {
-  const { post, simple } = props;
+  const { classes, post, simple } = props;
   const link: string = getPostLink(post);
 
   const postContext = {
@@ -44,14 +39,13 @@ const Post = (props: IPostDetailProps) => {
     simple,
   };
 
-  const clazz = classnames({
-    post: true,
-    simple,
+  const articleClassName = classnames(classes.post, {
+    [classes.simple]: simple,
   });
 
   return (
     <PostContext.Provider value={postContext}>
-      <article className={clazz}>
+      <article className={articleClassName}>
         <PostHeader />
         <PostContent />
         <PostFooter />
@@ -65,4 +59,3 @@ Post.defaultProps = {
 };
 
 export default withStyles(styles)(Post);
-
